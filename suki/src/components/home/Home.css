@@ -1,0 +1,7 @@
+.slide{
+    width:100%;
+    height:50vh;
+    background-position: center;
+    background-size: cover;
+    background-image: url('https://images.pexels.com/photos/370659/pexels-photo-370659.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+}
