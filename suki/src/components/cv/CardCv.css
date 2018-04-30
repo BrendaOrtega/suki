@@ -1,0 +1,31 @@
+.cv{
+    width: 270px;
+    height:auto;
+    border:1px solid #f2f2f2;
+    cursor: pointer;
+    transition: all 1s ease;
+    padding: 2%;
+}
+.photo{
+    width:120px;
+    border-radius: 60px;
+    height:120px;
+    margin: 0px auto;
+    overflow: hidden;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+}
+.info h3{
+    text-align: center;
+    margin-top: 10px;
+}
+.info p{
+    text-align: justify;
+}
+.cv:hover{
+    box-shadow: 2px 3px #f2f2f2;
+
+}
