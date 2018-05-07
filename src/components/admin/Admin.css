@@ -1,9 +1,95 @@
-.polo{
-    height: ;
+.admin h2{
+    color:rgba(0,0,0,.84);
+    font-size: 40px;
 }
-
+.admin p{
+    color:rgba(0,0,0,.54);
+    font-size: 20px;
+}
+.flexi{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 250px;
+ }
+.btn_pink{
+    background-color: #f48687;
+    width:120px;
+    height:40px;
+    color:white;
+    border: none;
+}
+.ant-menu-vertical .ant-menu-item:after, .ant-menu-vertical-left .ant-menu-item:after, .ant-menu-vertical-right .ant-menu-item:after, .ant-menu-inline .ant-menu-item:after{
+    border-right:3px solid  #f48687 !important;
+}
+.ant-menu-item-selected{
+    color:#f48687 !important;
+}
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
+    background-color: rgba(244,134,135,0.2) !important;
+}
 .box_post{
     width:70%;
     margin: 0 auto;
     padding-top: 100px;
 }
+.box_post h2{
+    text-align: center;
+    color:rgba(0,0,0,.54)!important;
+    font-size: 40px;
+}
+
+.ant-form-item-label label{
+    color:rgba(0,0,0,.54) !important;
+
+}
+.line{
+    background-color: rgba(0,0,0,.15)!important;
+    width:100%;
+    height:1px;
+    border: none;
+}
+.inp_t{
+    border: none;
+    width:100%;
+}
+.inp_t::placeholder { color:#d9d9da; }
+
+.box_btn{
+    margin-top: 50px;
+    text-align: center;
+}
+.box_img{
+    width:900px;
+    height:50px;
+    margin: 0 auto;
+    border: 1px dashed #d9d9d9;
+    background-color: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+textarea:focus, textarea:active{
+    border: green;
+}
+.prev{
+    display: flex;
+    flex-wrap: wrap;
+}
+.prev img{
+    width:100%;
+    height:auto;
+}
+.prev div{
+    width:200px;
+    height:200px;
+    margin:5px;
+    border: 1px solid #d9d9d9;
+    padding: 1%;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+
