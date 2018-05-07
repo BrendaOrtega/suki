@@ -7,3 +7,60 @@
     margin: 0 auto;
     padding-top: 100px;
 }
+
+/* BlisS */
+
+/* blog folder */
+.fullWidth{
+    min-width: 100%;
+    min-height: 100vh;
+    padding: 0px 50px;
+    /* border:5px solid black; */
+}
+
+.fullWidth .draft{
+    min-height: 100%;
+    font-size: 20rem;
+}
+
+.editor-button{
+      background: #999;
+      color: #fff;
+      border: none;
+      padding: .5em;
+      cursor: pointer;
+      margin-bottom: 1em;
+      margin-right: 1em;
+      border-radius: .2em;
+}
+pre{
+      border: 1px solid #ccc;
+      background: #f0f0f0;
+      border-radius: .2em;
+      padding: .5em;
+      margin: 0;
+}
+        
+pre > pre{
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.save-button{
+    position: absolute;
+    top:15px;
+    right: 15px;
+}
+
+.titulo-input{
+    position: absolute;
+    top:12px;
+    left: 300px;
+    width:60%;
+}
+
+.titulo-input input{
+    font-weight: bold;
+    font-size: 2rem;
+}

@@ -3,6 +3,10 @@ import './Admin.css';
 import { Menu, Icon, Button } from 'antd';
 import {Route, NavLink, Link} from 'react-router-dom';
 import Post from './Post';
+//bliss:
+import NewPost from './blog/NewPost';
+
+
 const SubMenu = Menu.SubMenu;
 
 
@@ -93,7 +97,7 @@ class AdminDisplay extends Component {
                     </Button>
                 </div>
 
-                <Route path="/admin/new-post" component={Post}/>
+                <Route path="/admin/new-post" component={NewPost}/>
                 <Route path="/admin/mijo" component={()=><h1>Mijo</h1>}/>
 
             </div>
