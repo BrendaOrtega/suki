@@ -7,6 +7,10 @@ import {CardQuoteForm} from './CardQuoteForm';
 import CardVideoForm from './CardVideoForm';
 import CardMediaForm from './CardMediaForm';
 import Post from './Post';
+//bliss:
+import NewPost from './blog/NewPost';
+
+
 const SubMenu = Menu.SubMenu;
 
 
@@ -97,6 +101,8 @@ class AdminDisplay extends Component {
                         <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
                     </Button>
                 </div>
+
+                <Route path="/admin/new-post" component={NewPost}/>
 
                 <Route path="/admin/quote/new-post" component={CardQuoteForm} />
                 <Route path="/admin/media/new-post" component={CardMediaForm} />
