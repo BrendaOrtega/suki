@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b441ec67-f9af-4b8a-86c4-ab18c15a7483" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/admin/CardVideoForm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/btn/Btn.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/btn/Btn.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/components/admin/CardImgForm.js" afterPath="$PROJECT_DIR$/src/components/admin/AdminHome.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/Admin.css" afterPath="$PROJECT_DIR$/src/components/admin/Admin.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/AdminDisplay.js" afterPath="$PROJECT_DIR$/src/components/admin/AdminDisplay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/CardMediaForm.js" afterPath="$PROJECT_DIR$/src/components/admin/CardMediaForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/CardQuoteForm.js" afterPath="$PROJECT_DIR$/src/components/admin/CardQuoteForm.js" />
-    </list>
+    <list default="true" id="b441ec67-f9af-4b8a-86c4-ab18c15a7483" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -364,24 +354,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="suki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="suki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -476,18 +448,18 @@
       <workItem from="1525125042211" duration="1567000" />
       <workItem from="1525146376317" duration="709000" />
       <workItem from="1525147111659" duration="3279000" />
-      <workItem from="1525642471403" duration="15477000" />
+      <workItem from="1525642471403" duration="15615000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24856000" />
+    <option name="totallyTimeSpent" value="24994000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="73" y="23" width="1240" height="777" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2483871" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2483871" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
