@@ -7,6 +7,7 @@ import CardBlog from '../card/CardBlog';
 import CardImg from '../card/CardImg';
 import CardQuote from '../card/CardQuote';
 import CardMedia from '../card/CardMedia';
+import Footer from '../footer/Footer';
 
 class HomeContainer extends Component {
 
@@ -39,7 +40,7 @@ class HomeContainer extends Component {
                     </div>
                 </div>
 
-
+            <Footer />
             </div>
         );
     }
