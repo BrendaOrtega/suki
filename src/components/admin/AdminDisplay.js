@@ -28,7 +28,6 @@ class AdminDisplay extends Component {
 
     render() {
         return (
-            <div>
             <div style={{display:'flex'}}>
                 <div style={{ width: 256}}>
                     <Menu
@@ -110,9 +109,6 @@ class AdminDisplay extends Component {
                 <Route path="/admin/media/new-post" component={CardMediaForm} />
                 <Route path="/admin/video/new-post" component={CardVideoForm} />
                 <Route exact path="/admin" component={AdminHome} />
-            </div>
-                <div style={{position:"absolute", bottom:"0", width:"100%"}}>
-                <Footer /></div>
             </div>
         );
     }
