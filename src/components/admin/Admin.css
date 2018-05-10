@@ -20,6 +20,8 @@
     color:white;
     border: none;
 }
+
+
 .ant-menu-vertical .ant-menu-item:after, .ant-menu-vertical-left .ant-menu-item:after, .ant-menu-vertical-right .ant-menu-item:after, .ant-menu-inline .ant-menu-item:after{
     border-right:3px solid  #f48687 !important;
 }
@@ -36,7 +38,14 @@
 }
 
 /* BlisS */
+.ant-layout-header{
+    background-color: #EEEEEE
+!important;
 
+}
+.ant-layout, .ant-layout *{
+    background-color: white !important;
+}
 /* blog folder */
 .fullWidth{
     min-width: 100%;
@@ -51,7 +60,7 @@
 }
 
 .editor-button{
-      background: #999;
+    background-color: #f48687 !important;
       color: #fff;
       border: none;
       padding: .5em;
@@ -181,9 +190,7 @@ input:focus, textarea:active{
 .ant-menu-inline .ant-menu-submenu-title:hover {
     color:#e3801b;
 }
-.ant-menu-submenu-arrow{
-    color:#e3801b !important;
-}
+
 .ant-menu-submenu-vertical > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:after, .ant-menu-submenu-vertical-left > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:after, .ant-menu-submenu-vertical-right > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:after, .ant-menu-submenu-inline > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:after, .ant-menu-submenu-vertical > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:before, .ant-menu-submenu-vertical-left > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:before, .ant-menu-submenu-vertical-right > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:before, .ant-menu-submenu-inline > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:before {
     background: -webkit-gradient(linear, left top, right top, from(#e3801b), to(#e3801b));
     background: -webkit-linear-gradient(left,  #e3801b, #e3801b);
