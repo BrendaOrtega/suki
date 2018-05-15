@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import './Card.css';
 
-class CardMedia extends Component {
+
+class CardImg extends Component {
 
     render() {
         return (
-            <div className="card-img imagen">
-                <div className="cover_color">
-                    <p>Sonora</p>
+            <div className="card-blog">
+                <div className="blog" >
+                    <img src="https://images.pexels.com/photos/34072/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""/>
+                </div>
+                <div className="nombre">
+                    <p>"Time feels as if it is slipping away"</p>
                 </div>
             </div>
         );
     }
 }
 
-export default CardMedia;
+export default CardImg;

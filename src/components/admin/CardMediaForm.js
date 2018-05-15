@@ -9,8 +9,14 @@ class CardMediaForm extends Component{
     preview;
 
     state = {
-      files:[]
+      files:[],
+        newpost:{},
+        post:[]
     };
+
+    onChange = (e) => {
+
+    }
 
     getFile = (e) => {
         this.preview.innerHTML = '';

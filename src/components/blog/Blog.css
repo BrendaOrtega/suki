@@ -1,0 +1,24 @@
+.box_blog{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:80%;
+    margin: 50px auto;
+
+    }
+.subtitulo{
+    text-align: center;
+    font-size: 25px;
+    padding-top: 5%;
+}
+
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}

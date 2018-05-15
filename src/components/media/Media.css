@@ -1,0 +1,20 @@
+.box_media{
+    width:80%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.img_album{
+    width:600px;
+    height:500px;
+    margin: 0 20px;
+    flex-grow: 1;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://images.pexels.com/photos/571169/pexels-photo-571169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+}
+.data_album{
+    width:250px;
+    flex-grow: 1;
+    margin: 0 20px;
+}
