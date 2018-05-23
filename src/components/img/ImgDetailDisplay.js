@@ -1,10 +1,12 @@
 import React from 'react';
 import './Img.css';
 import Nav from '../nav/Nav';
+import Slide from '../home/Slide';
 
 export const ImgDetailDisplay = ({}) => (
 
     <div>
+        <Slide />
         <Nav />
         <div className="box_image">
             <div className="img_hid">

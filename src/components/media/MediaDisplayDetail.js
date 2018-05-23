@@ -1,10 +1,13 @@
 import React from 'react';
 import './Media.css';
 import Nav from '../nav/Nav';
+import Slide from '../home/Slide';
+
 
 export const MediaDisplayDetail = ({}) => (
 
     <div>
+        <Slide />
         <Nav />
         <div className="box_media">
                 <div className="img_album">
