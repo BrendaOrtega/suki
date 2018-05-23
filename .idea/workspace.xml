@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b441ec67-f9af-4b8a-86c4-ab18c15a7483" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/img/ImgDetailDisplay.js" afterPath="$PROJECT_DIR$/src/components/img/ImgDetailDisplay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js" afterPath="$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js" />
-    </list>
+    <list default="true" id="b441ec67-f9af-4b8a-86c4-ab18c15a7483" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -46,12 +42,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="2" />
+              <folding>
+                <marker date="1527090731000" expanded="true" signature="715:1342" ph="&lt;Switch/&gt;" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -108,7 +106,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MediaDisplayDetail.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MediaDisplayDetail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -200,11 +198,11 @@
         <option value="$PROJECT_DIR$/src/components/img/Img.css" />
         <option value="$PROJECT_DIR$/src/components/card/Card.css" />
         <option value="$PROJECT_DIR$/src/components/blog/Blog.css" />
-        <option value="$PROJECT_DIR$/src/routes.js" />
         <option value="$PROJECT_DIR$/src/components/blog/BlogDetailDisplay.js" />
         <option value="$PROJECT_DIR$/src/components/home/HomeContainer.js" />
         <option value="$PROJECT_DIR$/src/components/img/ImgDetailDisplay.js" />
         <option value="$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js" />
+        <option value="$PROJECT_DIR$/src/routes.js" />
       </list>
     </option>
   </component>
@@ -566,15 +564,15 @@
       <workItem from="1526337966952" duration="206000" />
       <workItem from="1526347123930" duration="16501000" />
       <workItem from="1526785596444" duration="648000" />
-      <workItem from="1527087598957" duration="73000" />
+      <workItem from="1527087598957" duration="884000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48552000" />
+    <option name="totallyTimeSpent" value="49363000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="40" y="23" width="1240" height="777" extended-state="6" />
+    <frame x="40" y="23" width="1240" height="777" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2483871" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -871,14 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/card/Card.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -957,6 +947,16 @@
           <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="28" selection-end-column="2" />
+          <folding>
+            <marker date="1527090731000" expanded="true" signature="715:1342" ph="&lt;Switch/&gt;" />
           </folding>
         </state>
       </provider>
