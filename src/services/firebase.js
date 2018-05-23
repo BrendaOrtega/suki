@@ -25,20 +25,68 @@ import firebase from 'firebase';
 
   //posts
   /*save*/
-  export function savePost(post){
+  export function saveOrUpdatePost(post){
     post['date'] = Date.now();
-    console.log(post);
-    return blogRef.push(post)
-      .then(snap=>{
-          //console.log(snap.key);
-          post['key'] = snap.key;
-          return post;
-      })
-      .catch(e=>{
-          console.log(e)
-          return e;
-      })
-  }
+    if(post.key){
+        const updates = {};
+        updates[post.key] = post;
+        return blogRef.update(updates)
+        .then(snap=>{
+            return snap.key;
+        })
+        .catch(e=>{
+            return e;
+        })
+    }else{
+        return blogRef.push(post)
+        .then(snap=>{
+            return snap.key;
+        })
+        .catch(e=>{
+            return e;
+        })
+    }
+}
+
+
+/*read*/
+
+//all
+export function getPosts(){
+    return blogRef
+    .once('value')
+    .then(snap=>{
+        // console.log(snap.val());
+        const ob = snap.val();
+        const list = [];
+        for(let key in ob){
+            const post = ob[key];
+            post['key'] = key;
+            list.push(post);
+        }
+        return list;
+    })
+    .catch(e=>{
+        console.log(e)
+        return e;
+    })
+}
+
+//single
+export function getPost(id){
+    return blogRef.child(id)
+    .once('value')
+    .then(snap=>{
+        //console.log(snap.key);
+        const post = snap.val();
+        post['key'] = snap.key;
+        return post;
+    })
+    .catch(e=>{
+        console.log(e)
+        return e;
+    })
+}
 
 
   //quotes
