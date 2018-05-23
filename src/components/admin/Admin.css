@@ -20,6 +20,8 @@
     color:white;
     border: none;
 }
+
+
 .ant-menu-vertical .ant-menu-item:after, .ant-menu-vertical-left .ant-menu-item:after, .ant-menu-vertical-right .ant-menu-item:after, .ant-menu-inline .ant-menu-item:after{
     border-right:3px solid  #f48687 !important;
 }
@@ -36,7 +38,14 @@
 }
 
 /* BlisS */
+.ant-layout-header{
+    background-color: #EEEEEE
+!important;
 
+}
+.ant-layout, .ant-layout *{
+    background-color: white !important;
+}
 /* blog folder */
 .fullWidth{
     min-width: 100%;
@@ -51,7 +60,7 @@
 }
 
 .editor-button{
-      background: #999;
+    background-color: #f48687 !important;
       color: #fff;
       border: none;
       padding: .5em;
@@ -129,9 +138,10 @@ pre > pre{
     justify-content: center;
     cursor: pointer;
 }
-textarea:focus, textarea:active{
+input:focus, textarea:active{
     border: green;
 }
+
 .prev{
     display: flex;
     flex-wrap: wrap;
@@ -149,5 +159,45 @@ textarea:focus, textarea:active{
     border-radius: 2px;
     overflow: hidden;
 }
+.ant-menu-submenu-title:hover, .ant-menu-item:hover {
+    color: rgb(244,134,135) !important;
+}
+.ant-menu-submenu-arrow{
+    /*display: none;*/
+    background-color: red !important;
+    color: black !important;
+}
+.ant-menu-submenu-title:hover .ant-menu-submenu-arrow{
+    color:red !important;
+}
+
+.ant-menu-item-selected {
+    color: rgba(0, 0, 0, 0.65);
+}
+.ant-menu-item:hover {
+    color: rgba(0, 0, 0, 0.65);
+}
+.ant-menu-item:select {
+    background-color: pink;
+}
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #fff3e0;
+}
+.ant-menu-vertical .ant-menu-item:after, .ant-menu-vertical-left .ant-menu-item:after, .ant-menu-vertical-right .ant-menu-item:after, .ant-menu-inline .ant-menu-item:after {
+
+    border-right: 3px solid #ffb74d;
+}
+.ant-menu-inline .ant-menu-submenu-title:hover {
+    color:#e3801b;
+}
+
+.ant-menu-submenu-vertical > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:after, .ant-menu-submenu-vertical-left > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:after, .ant-menu-submenu-vertical-right > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:after, .ant-menu-submenu-inline > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:after, .ant-menu-submenu-vertical > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:before, .ant-menu-submenu-vertical-left > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:before, .ant-menu-submenu-vertical-right > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:before, .ant-menu-submenu-inline > .ant-menu-submenu-title:hover .ant-menu-submenu-arrow:before {
+    background: -webkit-gradient(linear, left top, right top, from(#e3801b), to(#e3801b));
+    background: -webkit-linear-gradient(left,  #e3801b, #e3801b);
+    background: -o-linear-gradient(left, #e3801b, #e3801b);
+    background: linear-gradient(to right,  #e3801b, #e3801b);
+}
+
+
 
 

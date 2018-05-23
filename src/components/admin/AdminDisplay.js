@@ -9,6 +9,7 @@ import CardMediaForm from './CardMediaForm';
 import Post from './Post';
 //bliss:
 import NewPost from './blog/NewPost';
+import Footer from '../footer/Footer';
 
 
 const SubMenu = Menu.SubMenu;
@@ -108,8 +109,6 @@ class AdminDisplay extends Component {
                 <Route path="/admin/media/new-post" component={CardMediaForm} />
                 <Route path="/admin/video/new-post" component={CardVideoForm} />
                 <Route exact path="/admin" component={AdminHome} />
-
-
             </div>
         );
     }

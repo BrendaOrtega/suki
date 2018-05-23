@@ -29,18 +29,18 @@ class Nav extends Component {
                         </Link>
                     </Menu.Item>
                     <Menu.Item key="app" >
-                        <Link to="/">
+                        <Link to="/photo">
                             <span>Fotografía</span>
                         </Link>
                     </Menu.Item>
                     <Menu.Item key="blog" >
-                        <Link to="/">
+                        <Link to="/blog">
                             <span>Blog</span>
                         </Link>
                     </Menu.Item>
                     <SubMenu title={<span>Proyectos</span>}>
                         <Menu.Item key="blog" >
-                            <Link to="/">
+                            <Link to="/media">
                                 <span>Personales</span>
                             </Link>
                         </Menu.Item>

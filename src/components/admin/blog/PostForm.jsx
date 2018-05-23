@@ -1,5 +1,5 @@
 import React from 'react';
-import Editor, { createEditorStateWithText } from 'draft-js-plugins-editor';
+import Editor, { convertToRaw, createEditorStateWithText } from 'draft-js-plugins-editor';
 import createHashtagPlugin from 'draft-js-hashtag-plugin';
 import './editorStyles.css';
 import 'draft-js-hashtag-plugin/lib/plugin.css';
@@ -33,7 +33,7 @@ export class PostForm extends React.Component{
         this.setState({
           editorState,
         });
-        this.props.onChange('');
+        this.props.onChange(convertToRaw(editorState));
       };
 
     render(){

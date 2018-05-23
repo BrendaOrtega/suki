@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Admin.css';
 import AdminDisplay from 'AdminDisplay';
+import Footer from '../footer/Footer';
 
 class Admin extends Component {
 
@@ -8,6 +9,7 @@ class Admin extends Component {
         return (
             <div>
                 <AdminDisplay />
+                <Footer />
             </div>
         );
     }
