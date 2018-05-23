@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css';
 import { LoginDisplay } from './LoginDisplay';
-import firebase from '../../firebase';
+import firebase from '../../services/firebase';
 
 class LoginContainer extends Component {
     state = {

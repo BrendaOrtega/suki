@@ -33,7 +33,8 @@ export class PostForm extends React.Component{
         this.setState({
           editorState,
         });
-        this.props.onChange(convertToRaw(editorState));
+        this.props.onChange('');
+        // this.props.onChange(convertToRaw(editorState));
       };
 
     render(){
