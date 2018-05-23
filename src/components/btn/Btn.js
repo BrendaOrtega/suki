@@ -4,9 +4,10 @@ import './Btn.css';
 
 class Btn extends React.Component {
     render(){
+        const {onClick} = this.props;
         return (
 
-                <button className="btn" >{this.props.text}</button>
+                <button onClick={onClick} className="btn" >{this.props.text}</button>
         );
     }
 }

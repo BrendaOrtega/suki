@@ -1,9 +1,37 @@
 import React from 'react';
 import Btn from '../btn/Btn';
 import { Form, Icon, Tooltip } from 'antd';
+import {saveQuote} from '../../services/firebase';
+import toastr from 'toastr';
+
 const FormItem = Form.Item;
 
-export const CardQuoteForm = ({}) => (
+
+export class CardQuoteForm extends React.Component{
+
+    state = {
+        quote:''
+    }
+
+    onChange = (e) => {
+        this.setState({quote:e.target.value})
+    }
+
+    onSave = () => {
+        saveQuote(this.state.quote)
+        .then(r=>{
+            toastr.success('Tu frase se guardó');
+            this.setState({quote:''})
+            console.log(r)
+        })
+        .catch(e=>{
+            toastr.success('Algo falló al guardar tu frase')
+            console.log(e)
+        });
+    };
+
+render(){
+    return(
 
     <div className="box_post">
         <h2>Quotes</h2>
@@ -18,11 +46,14 @@ export const CardQuoteForm = ({}) => (
                   </Tooltip>
                 </span>
                 )}>
-                <textarea className="inp_t" type="text" placeholder="The live is..."/>
+                <textarea onChange={this.onChange} value={this.state.quote} className="inp_t" type="text" placeholder="The life is..."/>
                 <div className="box_btn">
-                    <Btn text="Guardar"/>
+                    <Btn onClick={this.onSave} text="Guardar"/>
                 </div>
             </FormItem>
         </Form>
     </div>
 );
+
+}
+}

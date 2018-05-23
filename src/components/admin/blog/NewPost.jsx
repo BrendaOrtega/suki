@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
 import {PostForm} from './PostForm';
 import {Editor, EditorState, RichUtils} from 'draft-js';
-import { Menu, Layout } from 'antd';
+import { Button, Radio, Icon } from 'antd';
+import {savePost} from '../../../services/firebase';
+import { Menu, Layout, Input } from 'antd';
+import toastr from 'toastr';
+
 const { Header } = Layout;
 
 
@@ -9,44 +13,45 @@ const { Header } = Layout;
 class NewPost extends Component{
 
     state = {
-        editorState: EditorState.createEmpty()
+        post:{
+            title:'',
+            body:'',
+            tags:[]
+        }
     }
 
-    onChange = (editorState) => this.setState({editorState});
+    onChangeTitle = (e) => {
+        const {post} = this.state;
+        post['title'] = e.target.value;
+        this.setState({post});
+    };
 
-    handleKeyCommand = (command) => {
-            const newState = RichUtils.handleKeyCommand(this.state.editorState, command);
-            if (newState) {
-              this.onChange(newState);
-              return 'handled';
-            }
-        
-            return 'not-handled';
-          }
-    
-    onUnderlineClick = () => {
-        this.onChange(RichUtils.toggleInlineStyle(this.state.editorState, 'UNDERLINE'));
-    }
+    onChangeBody = (body) => {
+        const {post} = this.state;
+        post['body'] = body;
+        this.setState({post});
+    };
 
-    onToggleCode = () => {
-        this.onChange(RichUtils.toggleCode(this.state.editorState));
-          }
-
-    toggleBlockType = (blockType) => {
-            this.onChange(
-              RichUtils.toggleBlockType(
-                this.state.editorState,
-                blockType
-              )
-            );
-          }
+    onSave = () => {
+        savePost(this.state.post)
+        .then(r=>{
+            toastr.info('Tu post se ha guardado como draft');
+        })
+        .catch(e=>{
+            toastr.error('No se pudo guardar')
+            console.log(e)
+        })
+    };
 
     render(){
-        const {editorState} = this.state;
+        const {post} = this.state;
         return(
             <Layout className="layout">
-            <button className="save-button editor-button">Guardar</button>
-            <Header>
+            <button onClick={this.onSave} className="save-button editor-button">Guardar</button>
+            <Header style={{width:'100%'}}>
+            <Input value={post.title} onChange={this.onChangeTitle} style={{fontSize:30,maxWidth:'70%'}} size="large" placeholder="Aqui va el Titulo de tu post..." />
+        
+            {/* <Button type="primary" size={"large"}>Guardar</Button> */}
             <div className="logo" />
             <Menu
                 theme="dark"
@@ -59,11 +64,7 @@ class NewPost extends Component{
             </Menu>
             </Header>
       <PostForm 
-        onChange={this.onChange} 
-        editorState={editorState}
-        handleKeyCommand={this.handleKeyCommand}
-        onUnderlineClick={this.onUnderlineClick}
-        onToggleCode={this.onToggleCode}
+        onChange={this.onChangeBody}
         />
             </Layout>
             
