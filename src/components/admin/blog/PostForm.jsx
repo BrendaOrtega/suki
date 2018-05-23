@@ -2,12 +2,14 @@ import React from 'react';
 import {convertToRaw, convertFromRaw, EditorState} from 'draft-js';
 import Editor, {createEditorStateWithText, composeDecorators } from 'draft-js-plugins-editor';
 import createHashtagPlugin from 'draft-js-hashtag-plugin';
-import './editorStyles.css';
 import 'draft-js-hashtag-plugin/lib/plugin.css';
 import 'draft-js-inline-toolbar-plugin/lib/plugin.css';
 import 'draft-js-side-toolbar-plugin/lib/plugin.css';
-import 'draft-js-alignment-plugin/lib/plugin.css';
 import 'draft-js-image-plugin/lib/plugin.css';
+import 'draft-js-focus-plugin/lib/plugin.css';
+import 'draft-js-alignment-plugin/lib/plugin.css';
+import './editorStyles.css';
+
 
 import createInlineToolbarPlugin from 'draft-js-inline-toolbar-plugin';
 import createSideToolbarPlugin from 'draft-js-side-toolbar-plugin';
