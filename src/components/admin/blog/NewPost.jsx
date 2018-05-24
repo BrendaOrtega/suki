@@ -71,6 +71,10 @@ class NewPost extends Component{
         this.setState({post});
     }
 
+    forceSave = (content) => {
+        console.log(content);
+    };
+
     render(){
         const {post, showEditor} = this.state;
         // console.log(post);
@@ -79,6 +83,7 @@ class NewPost extends Component{
 
             <div className="editor-bliss">
                 <LastForm 
+                onClick={this.onSave}
                 content={post.body}
                 onSave={this.onSave}
                 />

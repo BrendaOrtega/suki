@@ -24,7 +24,7 @@ export default class PostList extends Component{
         return(
             <div>
                 {posts.map(post=>{
-                    return <p><Link to={`/admin/new-post/${post.key}`}>{post.title || 'sin titulo'}</Link></p>
+                    return <p key={post.key} ><Link to={`/admin/new-post/${post.key}`}>{post.title || 'sin titulo'}</Link></p>
                 })}
             </div>
         );

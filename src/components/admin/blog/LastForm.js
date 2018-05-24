@@ -24,6 +24,7 @@ import {
 //firebase 
 import {saveOrUpdatePost} from '../../../services/firebase';
 import toastr from 'toastr';
+import { Divider } from 'antd';
 
 // create base element
 var g=document.createElement('div');
@@ -49,16 +50,26 @@ export class LastForm extends React.Component {
   defaultOptions(options) {
     // default options
     if (options == null) {
-      options = {}
+      options = {
+        image_caption_placeholder : "descripion de la imagen",
+        image_upload_callback : (a,b,c)=>{
+          console.log('upload')
+        } ,
+        upload_url:'/lol'
+      }
     }
     let defaultOptions = {}
     defaultOptions.el = 'app'
     defaultOptions.content = ""
-    defaultOptions.read_only = false
+    defaultOptions.read_only = this.props.read_only || false
     defaultOptions.spellcheck = false
     defaultOptions.title_placeholder = "Title"
     defaultOptions.body_placeholder = "Write your story"
     // defaultOptions.api_key = "86c28a410a104c8bb58848733c82f840"
+    defaultOptions.image_upload_callback = ()=>{
+      console.log('upload')
+    } 
+    defaultOptions.image_caption_placeholder = "descripion de la imagen"
 
     //bliss
     
@@ -324,13 +335,18 @@ export class LastForm extends React.Component {
     const {content} = this.props;
     // console.log(content)
     return(
-      <DanteEditor 
+      <div>
+        {/* <button onClick={()=>this.props.onClick(content)} style={{position:'absolute', top:0,right:10}} >GUARDAR</button> */}
+        <DanteEditor 
         // content={content || JSON.parse(demo)}
         content={content}
-        config={ this.options } 
+        config={this.options}
+
         // onChange={this.onChange}
 
       />
+      </div>
+
     )
   }
 }
