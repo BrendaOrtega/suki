@@ -12,7 +12,7 @@ import './editorStyles.css';
 
 
 import createInlineToolbarPlugin from 'draft-js-inline-toolbar-plugin';
-import createSideToolbarPlugin from 'draft-js-side-toolbar-plugin';
+import createSideToolbarPlugin, {TooltipTrigger} from 'draft-js-side-toolbar-plugin';
 import createImagePlugin from 'draft-js-image-plugin';
 import createAlignmentPlugin from 'draft-js-alignment-plugin';
 import createResizeablePlugin from 'draft-js-resizeable-plugin';
@@ -20,6 +20,13 @@ import createFocusPlugin from 'draft-js-focus-plugin';
 
 
 import ImageAdd from './ImageAdd';
+
+
+//experiment
+import {MegadraftEditor} from "megadraft";
+import 'megadraft/dist/css/megadraft.css'
+
+
 
 const focusPlugin = createFocusPlugin();
 const resizeablePlugin = createResizeablePlugin();
@@ -37,7 +44,11 @@ const imagePlugin = createImagePlugin({ decorator });
 const hashtagPlugin = createHashtagPlugin();
 
 
-const sideToolbarPlugin = createSideToolbarPlugin();
+// const sideToolbarPlugin = createSideToolbarPlugin();
+const sideToolbarPlugin = createSideToolbarPlugin({
+    // structure: [TooltipTrigger]
+  });
+
 const { SideToolbar } = sideToolbarPlugin;
 
 const inlineToolbarPlugin = createInlineToolbarPlugin();
@@ -57,7 +68,7 @@ const plugins = [
 export const PostForm = ({editorState, onChange})=>{
     return (
             <div className="editor">
-                  <Editor
+                  {/* <Editor
                     editorState={editorState}
                     onChange={onChange}
                     plugins={plugins}
@@ -69,7 +80,11 @@ export const PostForm = ({editorState, onChange})=>{
                     onChange={onChange}
                     modifier={imagePlugin.addImage}
                     />
-                    <AlignmentTool />
+                    <AlignmentTool /> */}
+                    <MegadraftEditor 
+                        editorState={editorState}
+                        onChange={onChange}
+                    />
             </div>
         );
     

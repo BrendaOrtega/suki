@@ -9,6 +9,7 @@ import CardMediaForm from './CardMediaForm';
 import Post from './Post';
 //bliss:
 import NewPost from './blog/NewPost';
+import PostList from './blog/PostList';
 import Footer from '../footer/Footer';
 
 
@@ -51,7 +52,7 @@ class AdminDisplay extends Component {
                             </Menu.Item>
                             <Menu.Item key="6">
                                 <Icon type="copy" /><span>Contenido</span>
-                                <Link to="/admin/new-post">
+                                <Link to="/admin/posts">
                                 </Link>
                             </Menu.Item>
                         </SubMenu>
@@ -103,7 +104,9 @@ class AdminDisplay extends Component {
                     </Button>
                 </div>
 
-                <Route path="/admin/new-post" component={NewPost}/>
+                <Route exact path="/admin/new-post" component={NewPost}/>
+                <Route path="/admin/new-post/:id" component={NewPost}/>
+                <Route path="/admin/posts" component={PostList}/>
 
                 <Route path="/admin/quote/new-post" component={CardQuoteForm} />
                 <Route path="/admin/media/new-post" component={CardMediaForm} />
