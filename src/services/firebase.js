@@ -27,12 +27,13 @@ import firebase from 'firebase';
   /*save*/
   export function saveOrUpdatePost(post){
     post['date'] = Date.now();
+    console.log(post)
     if(post.key){
         const updates = {};
         updates[post.key] = post;
         return blogRef.update(updates)
-        .then(snap=>{
-            return snap.key;
+        .then(()=>{
+            return post.key;
         })
         .catch(e=>{
             return e;
@@ -77,7 +78,7 @@ export function getPost(id){
     return blogRef.child(id)
     .once('value')
     .then(snap=>{
-        //console.log(snap.key);
+        // console.log(snap.key);
         const post = snap.val();
         post['key'] = snap.key;
         return post;

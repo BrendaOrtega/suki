@@ -1,18 +1,10 @@
 import React, {Component} from 'react';
-import {PostForm} from './PostForm';
-import { Button, Radio, Icon } from 'antd';
-import {saveOrUpdatePost, getPost} from '../../../services/firebase';
-import { Menu, Layout, Input } from 'antd';
 import toastr from 'toastr';
-import Editor, {createEditorStateWithText } from 'draft-js-plugins-editor';
-import {convertToRaw, convertFromRaw, EditorState} from 'draft-js';
-
-//convert it
-import { stateToHTML } from 'draft-js-export-html';
-
-
-
-const { Header } = Layout;
+import {Layout, Input, Menu} from 'antd';
+import {LastForm} from './LastForm';
+import './editorStyles.css';
+import {getPost, saveOrUpdatePost} from '../../../services/firebase';
+const Header = Layout.Header;
 
 
 
@@ -20,25 +12,29 @@ class NewPost extends Component{
 
     state = {
         post:{
-            title:'',
-            body: createEditorStateWithText("Escribe algo genial #bliss"),
+            title:null,
+            body: "{\"entityMap\":{},\"blocks\":[{\"key\":\"lcva\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"68c1i\",\"text\":\"El titulo de tu post\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"4fc5h\",\"text\":\"Un subtitulo genial\",\"type\":\"header-two\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"bscdo\",\"text\":\"Y una historia memorable...\",\"type\":\"header-three\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"dlf2b\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"6pi0p\",\"text\":\"cuentanos mas!\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":14,\"style\":\"ITALIC\"}],\"entityRanges\":[],\"data\":{}}]}",
             tags:[]
         },
-        htmlBody:null
+        showEditor:false
     }
 
     componentWillMount(){
-        getPost('-LDChP58bM3r20F4rVKZ')
-        .then(post=>{
-            const eS = convertFromRaw(JSON.parse(post.body));
-            const editorState = EditorState.createWithContent(eS);
-            // const editorState = createEditorStateWithText(text);
-            post['body'] = editorState;                
-            this.setState({post});
-            
-            
-        })
-        .catch(e=>toastr.error('no se pudo' + e))
+        if(this.props.match.params.id){
+            getPost(this.props.match.params.id)
+            .then(post=>{
+                // console.log(post);
+                post['body'] = JSON.parse(post.body);
+                this.setState({post, showEditor:true})
+            })
+            .catch(e=>{
+                toastr.error('no se pudo cargar')
+            })
+        }else{
+            const {post} = this.state;
+            post['body'] = JSON.parse(post.body);
+            this.setState({showEditor:true, post})
+        }
     }
 
     onChangeTitle = (e) => {
@@ -47,71 +43,52 @@ class NewPost extends Component{
         this.setState({post});
     };
 
-    onChangeBody = (body) => {
+    onSave = (content) => {
         const {post} = this.state;
-        post['body'] = body;
-        this.setState({post});
-
-    };
-
-    onChange = (editorState) => {
-        const {post} = this.state;
-        post['body'] = editorState;
-        //to html
-
-        this.setState({
-          post,
-          htmlBody: stateToHTML(editorState.getCurrentContent())
-        });
-        console.log(this.state.htmlBody)
- 
-      };
-
-    onSave = () => {
-        const {post} = this.state;
-        const body = JSON.stringify(convertToRaw(this.state.post.body.getCurrentContent()));
-        post['body'] = body;
         console.log(post);
+        post['body'] = JSON.stringify(content);
+        this.findTitle(content)
         saveOrUpdatePost(post)
         .then(r=>{
-            toastr.info('Tu post se ha guardado como draft');
+            console.log(r)
+            toastr.success('se guardo');
+            post['body'] = JSON.parse(post.body);
+            post['key'] = r;
+            this.setState({post});
         })
         .catch(e=>{
-            toastr.error('No se pudo guardar')
-            console.log(e)
+            toastr.error('no se guardo')
         })
+    };
+
+    findTitle = (content) => {
+        const block = content.blocks.find(b=>{
+            return b.type === "header-one";
+        });
+        if(!block) return;
+        const {post} = this.state;
+        post['title'] = block.text;
+        this.setState({post});
+    }
+
+    forceSave = (content) => {
+        console.log(content);
     };
 
     render(){
-        const {post} = this.state;
-        console.log(post);
+        const {post, showEditor} = this.state;
+        // console.log(post);
+        if(!showEditor) return <div>Loading...</div>
         return(
-            <Layout className="layout">
-            <button onClick={this.onSave} className="save-button editor-button">Guardar</button>
-            <Header style={{width:'100%'}}>
-            <Input value={post.title} onChange={this.onChangeTitle} style={{fontSize:30,maxWidth:'70%'}} size="large" placeholder="Aqui va el Titulo de tu post..." />
-        
-            {/* <Button type="primary" size={"large"}>Guardar</Button> */}
-            <div className="logo" />
-            <Menu
-                theme="dark"
-                mode="horizontal"
-                defaultSelectedKeys={['1']}
-                style={{ lineHeight: '64px', width:'100%' }}
-            >
-                {/* <Menu.Item key="1">nav 1</Menu.Item> */}
 
-            </Menu>
-            </Header>
-      <PostForm 
-        editorState={post.body}
-        onChange={this.onChange}
-        />
-        {/* <div>
-            <h3>Blissi</h3>
-            <Editor editorState={this.state.post.body} readOnly/>
-        </div> */}
-            </Layout>
+            <div className="editor-bliss">
+                <LastForm 
+                onClick={this.onSave}
+                content={post.body}
+                onSave={this.onSave}
+                />
+            </div>
+
             
         )
     }

@@ -11,6 +11,7 @@ import MediaContainer from './components/media/MediaContainer';
 import {MediaDisplayDetail} from './components/media/MediaDisplayDetail';
 import ImgContainer from './components/img/ImgContainer';
 import {ImgDetailDisplay} from './components/img/ImgDetailDisplay';
+import EditPost from './components/admin/blog/EditPost';
 
 
 export const Routes = () => (
@@ -25,5 +26,6 @@ export const Routes = () => (
         <Route path="/blog/detail" component={BlogDetailDisplay} />
         <Route exact path="/photo" component={ImgContainer} />
         <Route path="/photo/detail" component={ImgDetailDisplay} />
+        <Route path="/test" component={EditPost} />
     </Switch>
 );

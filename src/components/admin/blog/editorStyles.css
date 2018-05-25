@@ -24,3 +24,7 @@
   .public-DraftStyleDefault-block{
     position: inherit!important;
   }
+
+  .editor-bliss{
+    padding-left: 100px; 
+  }
