@@ -49,7 +49,11 @@ class Nav extends Component {
                                 <span>Profesionales</span>
                             </Link>
                         </Menu.Item>
-
+                        <Menu.Item key="blog" >
+                            <Link to="/">
+                                <span>Partnership</span>
+                            </Link>
+                        </Menu.Item>
                     </SubMenu>
                     <Menu.Item key="face" >
                         <Link to="/" target='blank'>
@@ -62,12 +66,12 @@ class Nav extends Component {
                         </Link>
                     </Menu.Item>
                     <Menu.Item key="twit" target='blank'>
-                        <Link to="/">
-                            <FontAwesome name="twitter" />
+                        <Link to="https://www.linkedin.com/in/alejandra-armendariz-a6337655/">
+                            <FontAwesome name="linkedin" />
                         </Link>
                     </Menu.Item>
                     <Menu.Item key="youtube" target='blank'>
-                        <Link to="/">
+                        <Link to="https://www.youtube.com/channel/UCKL_aq2mKWzj_e-lVusIF9Q?view_as=subscriber">
                             <FontAwesome name="youtube" />
                         </Link>
                     </Menu.Item>

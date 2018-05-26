@@ -1,7 +1,14 @@
 import React,{Component} from 'react';
 import Btn from '../btn/Btn';
 import { Form, Icon, Tooltip } from 'antd';
+import { DatePicker } from 'antd';
+
 const FormItem = Form.Item;
+const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
+function onChange(date, dateString) {
+    console.log(date, dateString);
+}
+
 
 class CardMediaForm extends Component{
 
@@ -41,6 +48,7 @@ class CardMediaForm extends Component{
 
     };
 
+
     render(){
         return(
             <div className="box_post">
@@ -57,6 +65,28 @@ class CardMediaForm extends Component{
                             </span>
                         )}>
                         <input className="inp_t" type="text" placeholder="Título del álbum"/>
+                    </FormItem>
+                    <FormItem
+                        label={(
+                            <span>
+                              Lugar&nbsp;
+                                <Tooltip title="Lugar">
+                                <Icon type="question-circle-o"/>
+                              </Tooltip>
+                            </span>
+                        )}>
+                        <input className="inp_t" type="text" placeholder="Lugar"/>
+                    </FormItem>
+                    <FormItem
+                        label={(
+                            <span>
+                              Fecha&nbsp;
+                                <Tooltip title="Fecha">
+                                <Icon type="question-circle-o"/>
+                              </Tooltip>
+                            </span>
+                        )}>
+                        <MonthPicker style={{border:"none !important"}} onChange={onChange} placeholder="Select month" />
                     </FormItem>
                     <FormItem
                         label={(

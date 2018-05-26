@@ -43,6 +43,9 @@
 !important;
 
 }
+.ant-input{
+    border:none !important;
+}
 .ant-layout, .ant-layout *{
     background-color: white !important;
 }
