@@ -6,8 +6,14 @@ import toastr from 'toastr';
 import { Spin, Alert } from 'antd';
 import {saveAlbum, storage} from '../../../services/firebase';
 
+import { DatePicker } from 'antd';
 
 const FormItem = Form.Item;
+const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
+function onChange(date, dateString) {
+    console.log(date, dateString);
+}
+
 
 
 class CardMediaForm extends Component{
@@ -119,6 +125,28 @@ class CardMediaForm extends Component{
                             </span>
                         )}>
                         <input onChange={this.onChange} value={newAlbum.title} name="title" className="inp_t" type="text" placeholder="Título del álbum"/>
+                    </FormItem>
+                    <FormItem
+                        label={(
+                            <span>
+                              Lugar&nbsp;
+                                <Tooltip title="Lugar">
+                                <Icon type="question-circle-o"/>
+                              </Tooltip>
+                            </span>
+                        )}>
+                        <input className="inp_t" type="text" placeholder="Lugar"/>
+                    </FormItem>
+                    <FormItem
+                        label={(
+                            <span>
+                              Fecha&nbsp;
+                                <Tooltip title="Fecha">
+                                <Icon type="question-circle-o"/>
+                              </Tooltip>
+                            </span>
+                        )}>
+                        <MonthPicker style={{border:"none !important"}} onChange={onChange} placeholder="Select month" />
                     </FormItem>
                     <FormItem
                         label={(

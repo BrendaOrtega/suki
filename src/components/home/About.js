@@ -54,14 +54,25 @@ class About extends Component {
                             </p>
                         </div>
                         <div className="rt">
-                            <h3><strong>Carrera Profesional:</strong></h3>
+                            <h3><strong>Experiencia Profesional:</strong></h3>
                             <p>
-                                Universidad Autónoma de Granada, España.
+                                Maestra de niños de Eduación Especial <br/> en Comunidad Los Horcones (2004 - 2010)
+
                                 <br/>
-                                ITESO, Guadalajara, Jal.
+                                Directora en Equinos Sonora (2004-2010).
+
                                 <br/>
-                                Universidad de Arizona.
+                                Gerencia Eventos y Mercadotecnia Criadero <br/> de Caballos Caliente (2013 - 2014)
+
+                                <br/>
+                                Directora desarrollo de proyectos ecuestres <br/> turísticos Rancho Tecate Resort (2014 - 2015)
+                                <br/>
+                                Directora desarrollo de Hípico Equitarius (2015 - 2016)
+                                <br/>
+                                Directora de Cavale Fiesta del Caballo  (2016-2018)
+
                             </p>
+
                         </div>
                     </div>
                 <div style={{textAlign:"center", marginBottom:"50px"}}>
