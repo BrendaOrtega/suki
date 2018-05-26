@@ -1,22 +1,24 @@
 import React, {Component} from 'react';
 import toastr from 'toastr';
-import {Layout, Input, Menu} from 'antd';
-import {LastForm} from './LastForm';
+import {Layout, Input, Menu, Button} from 'antd';
+// import {LastForm} from './LastForm';
+import {PostForm} from './PostForm';
 import './editorStyles.css';
 import {getPost, saveOrUpdatePost} from '../../../services/firebase';
+import { createEditorStateWithText, createWithContent } from 'draft-js-plugins-editor';
+import {convertToRaw, convertFromRaw, EditorState} from 'draft-js';
 const Header = Layout.Header;
-
-
 
 class NewPost extends Component{
 
     state = {
         post:{
-            title:null,
-            body: "{\"entityMap\":{},\"blocks\":[{\"key\":\"lcva\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"68c1i\",\"text\":\"El titulo de tu post\",\"type\":\"header-one\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"4fc5h\",\"text\":\"Un subtitulo genial\",\"type\":\"header-two\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"bscdo\",\"text\":\"Y una historia memorable...\",\"type\":\"header-three\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"dlf2b\",\"text\":\"\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[],\"entityRanges\":[],\"data\":{}},{\"key\":\"6pi0p\",\"text\":\"cuentanos mas!\",\"type\":\"unstyled\",\"depth\":0,\"inlineStyleRanges\":[{\"offset\":0,\"length\":14,\"style\":\"ITALIC\"}],\"entityRanges\":[],\"data\":{}}]}",
+            title:'Sin titulo',
+            //body:this.convertFromJson(preview),
             tags:[]
         },
-        showEditor:false
+        showEditor: false,
+        editorState: createEditorStateWithText("Escribe un #post increible ;)")
     }
 
     componentWillMount(){
@@ -24,68 +26,148 @@ class NewPost extends Component{
             getPost(this.props.match.params.id)
             .then(post=>{
                 // console.log(post);
-                post['body'] = JSON.parse(post.body);
-                this.setState({post, showEditor:true})
+                const editorState = this.convertFromJson(post.body)
+                this.setState({editorState, post})
             })
             .catch(e=>{
                 toastr.error('no se pudo cargar')
             })
         }else{
-            const {post} = this.state;
-            post['body'] = JSON.parse(post.body);
-            this.setState({showEditor:true, post})
+            toastr.info('Nuevo post')
         }
     }
 
+    // onChangeTitle = (e) => {
+    //     const {post} = this.state;
+    //     post['title'] = e.target.value;
+    //     this.setState({post});
+    // };
+
+    // onSave = (content) => {
+    //     const {post} = this.state;
+    //     console.log(post);
+    //     post['body'] = JSON.stringify(content);
+    //     this.findTitle(content)
+    //     saveOrUpdatePost(post)
+    //     .then(r=>{
+    //         console.log(r)
+    //         toastr.success('se guardo');
+    //         post['body'] = JSON.parse(post.body);
+    //         post['key'] = r;
+    //         this.setState({post});
+    //     })
+    //     .catch(e=>{
+    //         toastr.error('no se guardo')
+    //     })
+    // };
+
+    // findTitle = (content) => {
+    //     const block = content.blocks.find(b=>{
+    //         return b.type === "header-one";
+    //     });
+    //     if(!block) return;
+    //     const {post} = this.state;
+    //     post['title'] = block.text;
+    //     this.setState({post});
+    // }
+
+    // forceSave = (content) => {
+    //     console.log(content);
+    // };
+
+    // componentWillMount(){
+    //     if(this.props.match.params.id){
+    //         console.log(this.props.match.params.id)
+    //         getPost(this.props.match.params.id) 
+    //         .then(post=>{
+    //             post.body = createWithContent(convertFromRaw(post.body));
+    //             console.log(post.body);
+    //             this.setState({post, editorState:post.body});
+    //         })
+    //         .catch(e=>{
+    //             console.log(e)
+    //             toastr.error(e)
+    //         })
+    //     }
+    // }
+
     onChangeTitle = (e) => {
         const {post} = this.state;
-        post['title'] = e.target.value;
-        this.setState({post});
+        post.title = e.target.value;
+         this.setState({post})
     };
 
-    onSave = (content) => {
-        const {post} = this.state;
-        console.log(post);
-        post['body'] = JSON.stringify(content);
-        this.findTitle(content)
-        saveOrUpdatePost(post)
+    onChange = (editorState) => {
+        this.setState({editorState});
+    };
+
+    onSave = () => {
+        const {post, editorState} = this.state;
+        const jsonFormat = this.convertToJson(editorState);
+        post.body = jsonFormat;
+
+
+     saveOrUpdatePost(post)
         .then(r=>{
-            console.log(r)
             toastr.success('se guardo');
-            post['body'] = JSON.parse(post.body);
-            post['key'] = r;
+            post.key = r; 
+            console.log(r);
+        //convertir de vuelta
+            // post.body = this.convertFromJson()
             this.setState({post});
         })
         .catch(e=>{
+            console.log(e);
             toastr.error('no se guardo')
         })
     };
 
-    findTitle = (content) => {
-        const block = content.blocks.find(b=>{
-            return b.type === "header-one";
-        });
-        if(!block) return;
-        const {post} = this.state;
-        post['title'] = block.text;
-        this.setState({post});
-    }
+    convertFromJson = (jsonFormat) => {
+        const raw = JSON.parse(jsonFormat);
+        const content = convertFromRaw(raw);
+        const editorState = EditorState.push(EditorState.createEmpty(), content);
+        // const editorState = createWithContent(content);
+        return editorState;
 
-    forceSave = (content) => {
-        console.log(content);
     };
 
-    render(){
-        const {post, showEditor} = this.state;
-        // console.log(post);
-        if(!showEditor) return <div>Loading...</div>
-        return(
+    convertToJson = (editorState) => {
+        const raw = convertToRaw( editorState.getCurrentContent() ) ;
 
-            <div className="editor-bliss">
-                <LastForm 
-                onClick={this.onSave}
-                content={post.body}
-                onSave={this.onSave}
+        var cache = [];
+        const converted = JSON.stringify(raw, function(key, value) {
+            if (typeof value === 'object' && value !== null) {
+                if (cache.indexOf(value) !== -1) {
+                    // Circular reference found, discard key
+                    return;
+                }
+                // Store value in our collection
+                cache.push(value);
+            }
+            return value;
+        });
+        cache = null; // Enable garbage collection
+        return converted;
+    }
+
+    render(){
+        const {editorState} = this.state;
+        const {title} = this.state.post;
+        // console.log(post);
+        // if(!showEditor) return <div>Loading...</div>
+        return(
+            <div >
+                <Menu style={{position:'fixed', zIndex:999}} mode="horizontal" >
+                <Menu.Item>
+                 <Input onChange={this.onChangeTitle} value={title} style={{width:'600px', fontSize:'200%'}} placeholder="Un titulo genial" size="large" /> 
+                </Menu.Item>
+                <Menu.Item title="SubMenu">
+                    <Button onClick={this.onSave} type="primary" size="large">Guardar</Button>
+                </Menu.Item>
+                </Menu>
+                <PostForm 
+                editorState={editorState}
+                onChange={this.onChange}
                 />
             </div>
 

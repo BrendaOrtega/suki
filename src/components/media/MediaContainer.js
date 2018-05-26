@@ -5,13 +5,35 @@ import Slide from '../home/Slide';
 import Nav from '../nav/Nav';
 import CardMedia from '../card/CardMedia';
 import Footer from '../footer/Footer';
+import toastr from 'toastr';
+import {getAlbums} from '../../services/firebase';
+import {Spin} from 'antd';
+
+
 
 class BlogContainer extends Component {
+
+    state = {
+        albums:[]
+    }
 
     componentDidMount () {
         window.scroll(0, 0)
     }
+
+    componentWillMount(){
+        getAlbums()
+        .then(albums=>{
+            this.setState({albums});
+        })
+        .catch(e=>{
+            console.log(e);
+            toastr.error('no se pudieron cargar')
+        })
+    }
+
     render() {
+        const {albums} = this.state;
         return (
             <div>
                 <Slide />
@@ -21,12 +43,12 @@ class BlogContainer extends Component {
                 <hr className="line_gris"/>
                 <div className="box_blog">
 
-                    <CardMedia />
-                    <CardMedia />
-                    <CardMedia />
-                    <CardMedia />
-                    <CardMedia />
+                    {albums.length ? null : <Spin />}
 
+                    {albums.map(album=>{
+                        return <dir><CardMedia key={album.key} cover={album.pics[0]} {...album} id={album.key} /></dir>
+                    })}
+                    
 
                 </div>
 

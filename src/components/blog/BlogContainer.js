@@ -7,6 +7,7 @@ import CardBlog from '../card/CardBlog';
 import Footer from '../footer/Footer';
 import {getPosts} from '../../services/firebase';
 import toastr from 'toastr';
+import {Spin} from 'antd';
 
 class BlogContainer extends Component {
 
@@ -41,8 +42,11 @@ class BlogContainer extends Component {
                 <hr className="line_gris"/>
                 <div className="box_blog">
 
+                    {this.state.posts.length ? null : <Spin />}
+
+
                     {this.state.posts.map(post=>{
-                        return <CardBlog key={post.key} {...post} />
+                        return <CardBlog id={post.key} key={post.key} {...post} />
                     })}
 
                 </div>

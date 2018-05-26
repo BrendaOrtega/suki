@@ -1,7 +1,14 @@
 import React,{Component} from 'react';
-import Btn from '../btn/Btn';
+import Btn from '../../btn/Btn';
 import { Form, Icon, Tooltip } from 'antd';
+import firebase from '../../../services/firebase';
+import toastr from 'toastr';
+import { Spin, Alert } from 'antd';
+import {saveAlbum, storage} from '../../../services/firebase';
+
+
 const FormItem = Form.Item;
+
 
 class CardMediaForm extends Component{
 
@@ -9,14 +16,15 @@ class CardMediaForm extends Component{
     preview;
 
     state = {
-      files:[],
-        newpost:{},
-        post:[]
+        files:[],
+        newAlbum:{title:'', pics:[]},
+        post:[],
+        links:[],
+        loading:false,
+        //testing
+        course:{}
     };
 
-    onChange = (e) => {
-
-    }
 
     getFile = (e) => {
         this.preview.innerHTML = '';
@@ -41,9 +49,63 @@ class CardMediaForm extends Component{
 
     };
 
+    onChange = (e) => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const {newAlbum} = this.state;
+        newAlbum[field] = value;
+        this.setState({newAlbum});
+    };
+
+    saveAlbum = () => {
+        const {newAlbum} = this.state;
+        this.uploadFiles()
+        .then(links=>{
+            newAlbum.pics = links;
+            console.log(newAlbum);
+            return saveAlbum(newAlbum)
+        })
+        .then(res=>{
+            this.setState({loading:false})
+            toastr.success('se subieron las imagenes');
+        })
+        .catch(e=>{
+            console.log(e);
+            toastr.error("no se pudieron subir las imagenes")
+        });
+        
+        
+    };
+
+    uploadAlbum = () => {
+        console.log('terminó');
+    };
+
+    uploadFiles = (e) => {
+        this.setState({loading:true})
+        const {files} = this.state;
+        const promises = [];
+        for(let file of files){
+            promises.push(firebase.storage()
+            .ref('media')
+            .child(file.name)
+            .put(file)
+            .then(snap=>{
+                return snap.downloadURL
+            })
+        );
+        }
+        return Promise.all(promises);
+
+    };
+
+
     render(){
+        const {newAlbum, loading} = this.state;
         return(
             <div className="box_post">
+
+
                 <h2>Álbum</h2>
                 <hr className="line"/>
                 <Form >
@@ -56,7 +118,7 @@ class CardMediaForm extends Component{
                               </Tooltip>
                             </span>
                         )}>
-                        <input className="inp_t" type="text" placeholder="Título del álbum"/>
+                        <input onChange={this.onChange} value={newAlbum.title} name="title" className="inp_t" type="text" placeholder="Título del álbum"/>
                     </FormItem>
                     <FormItem
                         label={(
@@ -67,12 +129,17 @@ class CardMediaForm extends Component{
                               </Tooltip>
                             </span>
                         )}>
-                        <textarea className="inp_t" type="text" placeholder="Descripción del álbum"/>
+                        <textarea onChange={this.onChange} name="desc" className="inp_t" type="text" placeholder="Descripción del álbum">{newAlbum.desc}</textarea>
                     </FormItem>
                     <FormItem
                         label={(
                             <span>
                               Que fotografías forman parte del álbum?&nbsp;
+
+            {loading && <Spin />}
+
+
+
                                 <Tooltip title="Selecciona las fotos del álbum">
                                 <Icon type="question-circle-o"/>
                               </Tooltip>
@@ -92,6 +159,18 @@ class CardMediaForm extends Component{
                     </div>
                 </div>
                 <input accept="image/*" multiple onChange={this.getFile} ref={inp => this.input = inp} type="file" hidden/>
+            <Btn 
+            text="Guardar"
+            onClick={this.saveAlbum} 
+            />
+
+
+
+
+
+                          
+
+
             </div>
             )
         }

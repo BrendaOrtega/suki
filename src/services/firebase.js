@@ -13,6 +13,17 @@ import firebase from 'firebase';
   };
   firebase.initializeApp(config);
 
+  export const storage = firebase.storage();
+
+  //prototyping files
+//   firebase.storage().ref().constructor.prototype.putFiles = function(files) { 
+//     var ref = this;
+//     return Promise.all(files.map(function(file) {
+//         console.log(file.name);
+//       return ref.child(file.name).put(file);
+//     }));
+//   }
+
 
 //   firebase.initializeApp(config);
 
@@ -22,6 +33,7 @@ import firebase from 'firebase';
   const quotesRef = db.ref('quotes');
   const mediaRef = db.ref('media');
   const blogRef = db.ref('blog');
+  const videoRef = db.ref('videos');
 
   //posts
   /*save*/
@@ -93,15 +105,9 @@ export function getPost(id){
   //quotes
   /*save*/
   export function saveQuote(quote){
-      const q = {
-          date: Date.now(),
-          text:quote
-      }
-      return quotesRef.push(q)
+      quote['date'] = Date.now()
+      return quotesRef.push(quote)
         .then(snap=>{
-            console.log(snap);
-            console.log(snap.key);
-            console.log(snap.val());
             return snap
         })
         .catch(e=>{
@@ -110,6 +116,108 @@ export function getPost(id){
         })
   }
 
+  /* GetAll */
+  export function getQuotes(quote){
+    return quotesRef.once("value")
+      .then(snap=>{
+        const ob = snap.val();
+        const list = [];
+        for(let key in ob){
+            const post = ob[key];
+            post['key'] = key;
+            list.push(post);
+        }
+        return list;
+      })
+      .catch(e=>{
+          console.log(e)
+          return e;
+      })
+}
+  // GetOne
+  //EditOne
+
+  /* albums */
+  //save one
+  export function saveAlbum(item){
+    item['date'] = Date.now()
+    return mediaRef.push(item)
+      .then(snap=>{
+          return snap
+      })
+      .catch(e=>{
+          console.log(e)
+          return e;
+      })
+}
+
+//getAll
+export function getAlbums(){
+    return mediaRef.once("value")
+      .then(snap=>{
+        const ob = snap.val();
+        const list = [];
+        for(let key in ob){
+            const post = ob[key];
+            post['key'] = key;
+            list.push(post);
+        }
+        return list;
+      })
+      .catch(e=>{
+          console.log(e)
+          return e;
+      })
+}
+
+//get one
+export function getAlbum(id){
+    return mediaRef.child(id).once("value")
+      .then(snap=>{
+        const ob = snap.val();
+        const list = [];
+        ob['key'] = snap.key;
+        return ob;
+      })
+      .catch(e=>{
+          console.log(e)
+          return e;
+      })
+}
+
+/* Videos */
+// uploadVideo
+export function saveVideo(item){
+    item['date'] = Date.now()
+    return videoRef.push(item)
+      .then(snap=>{
+          return snap
+      })
+      .catch(e=>{
+          console.log(e)
+          return e;
+      })
+}
+
+//all Videos
+
+export function getVideos(){
+    return videoRef.once("value")
+      .then(snap=>{
+        const ob = snap.val();
+        const list = [];
+        for(let key in ob){
+            const post = ob[key];
+            post['key'] = key;
+            list.push(post);
+        }
+        return list;
+      })
+      .catch(e=>{
+          console.log(e)
+          return e;
+      })
+}
 
 
   export default firebase;

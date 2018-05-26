@@ -1,7 +1,7 @@
 import React from 'react';
-import Btn from '../btn/Btn';
-import { Form, Icon, Tooltip } from 'antd';
-import {saveQuote} from '../../services/firebase';
+import Btn from '../../btn/Btn';
+import { Form, Icon, Tooltip, Input } from 'antd';
+import {saveQuote} from '../../../services/firebase';
 import toastr from 'toastr';
 
 const FormItem = Form.Item;
@@ -10,18 +10,21 @@ const FormItem = Form.Item;
 export class CardQuoteForm extends React.Component{
 
     state = {
-        quote:''
+        quote:{}
     }
 
     onChange = (e) => {
-        this.setState({quote:e.target.value})
+        const {quote} = this.state;
+        quote.author = this.refs.author.input.value
+        quote.text = this.refs.text.value;
+        this.setState({quote})
     }
 
     onSave = () => {
         saveQuote(this.state.quote)
         .then(r=>{
             toastr.success('Tu frase se guardó');
-            this.setState({quote:''})
+            this.setState({quote:{}})
             console.log(r)
         })
         .catch(e=>{
@@ -46,7 +49,8 @@ render(){
                   </Tooltip>
                 </span>
                 )}>
-                <textarea onChange={this.onChange} value={this.state.quote} className="inp_t" type="text" placeholder="The life is..."/>
+                <textarea ref="text" onChange={this.onChange} className="inp_t" type="text" placeholder="The life is...">{this.state.quote.text}</textarea>
+                <Input onChange={this.onChange} value={this.state.quote.author} placeholder="El author es opcional" ref="author" name="author"  />   
                 <div className="box_btn">
                     <Btn onClick={this.onSave} text="Guardar"/>
                 </div>

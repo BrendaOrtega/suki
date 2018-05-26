@@ -3,9 +3,11 @@ import './Admin.css';
 import { Menu, Icon, Button } from 'antd';
 import {Route, NavLink, Link} from 'react-router-dom';
 import {AdminHome} from './AdminHome';
-import {CardQuoteForm} from './CardQuoteForm';
-import CardVideoForm from './CardVideoForm';
-import CardMediaForm from './CardMediaForm';
+import {CardQuoteForm, CardQuoteList} from './quotes';
+import CardVideoForm from './videos/CardVideoForm';
+import {VideoList} from './videos/VideoList';
+import CardMediaForm from './media/CardMediaForm';
+import {MediaList} from './media/MediaList';
 import Post from './Post';
 //bliss:
 import NewPost from './blog/NewPost';
@@ -20,6 +22,7 @@ const SubMenu = Menu.SubMenu;
 class AdminDisplay extends Component {
     state = {
         collapsed: false,
+        openKeys:[]
     }
     toggleCollapsed = () => {
         this.setState({
@@ -28,10 +31,12 @@ class AdminDisplay extends Component {
     }
 
     render() {
+        const {openKeys} = this.state;
         return (
             <div style={{display:'flex'}}>
                 <div style={{ width: 256}}>
                     <Menu
+                        
                         defaultSelectedKeys={['1']}
                         defaultOpenKeys={['sub1']}
                         mode="inline"
@@ -58,37 +63,37 @@ class AdminDisplay extends Component {
                         </SubMenu>
                         <SubMenu key="sub2" title={<span><Icon type="team" /><span>Quotes</span></span>}>
                             <Menu.Item key="7">
-                                <Icon type="edit" /><span>Nuevo Post</span>
-                                <Link to="/admin/quote/new-post">
+                                <Icon type="edit" /><span>Nueva Quote</span>
+                                <Link to="/admin/quote/new">
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="8">
                                 <Icon type="copy" /><span>Contenido</span>
-                                <Link to="/admin/new-post">
+                                <Link to="/admin/quotes">
                                 </Link>
                             </Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub3" title={<span><Icon type="picture" /><span>Media</span></span>}>
                             <Menu.Item key="9">
-                                <Icon type="edit" /><span>Nuevo Post</span>
-                                <Link to="/admin/media/new-post">
+                                <Icon type="edit" /><span>Nuevo Album</span>
+                                <Link to="/admin/media/new">
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="10">
                                 <Icon type="copy" /><span>Contenido</span>
-                                <Link to="/admin/new-post">
+                                <Link to="/admin/media">
                                 </Link>
                             </Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub4" title={<span><Icon type="scan" /><span>Video</span></span>}>
                             <Menu.Item key="11">
-                                <Icon type="edit" /><span>Nuevo Post</span>
-                                <Link to="/admin/video/new-post">
+                                <Icon type="edit" /><span>Nuevo Video</span>
+                                <Link to="/admin/videos/new">
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="12">
                                 <Icon type="copy" /><span>Contenido</span>
-                                <Link to="/admin/new-post">
+                                <Link to="/admin/videos">
                                 </Link>
                             </Menu.Item>
                         </SubMenu>
@@ -104,13 +109,19 @@ class AdminDisplay extends Component {
                     </Button>
                 </div>
 
+                <Route exact path="/admin/posts" component={PostList}/>
                 <Route exact path="/admin/new-post" component={NewPost}/>
                 <Route path="/admin/new-post/:id" component={NewPost}/>
-                <Route path="/admin/posts" component={PostList}/>
 
-                <Route path="/admin/quote/new-post" component={CardQuoteForm} />
-                <Route path="/admin/media/new-post" component={CardMediaForm} />
-                <Route path="/admin/video/new-post" component={CardVideoForm} />
+                <Route exact path="/admin/quotes" component={CardQuoteList} />
+                <Route path="/admin/quote/new" component={CardQuoteForm} />
+
+                <Route exact path="/admin/media" component={MediaList} />
+                <Route path="/admin/media/new" component={CardMediaForm} />
+
+                <Route exact path="/admin/videos" component={VideoList} />
+                <Route path="/admin/videos/new" component={CardVideoForm} />
+
                 <Route exact path="/admin" component={AdminHome} />
             </div>
         );

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import './Card.css';
 import {Link} from 'react-router-dom';
 
-const CardBlog = ({title}) => {
+const CardBlog = ({title, id}) => {
         return (
-            <Link to={`/blog/`}>
+            <Link to={`/blog/detail/${id}`}>
                 <div className="card-media">
                    <div className="media">
                        <img src="https://images.pexels.com/photos/33688/delicate-arch-night-stars-landscape.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""/>
