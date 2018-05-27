@@ -2,34 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b441ec67-f9af-4b8a-86c4-ab18c15a7483" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/admin/quotes/Quote.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/contacto/Contacto.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/contacto/Contacto.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/contacto/ContactoDisplay.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/404.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.eb6c236a.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.eb6c236a.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.e15d9185.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.e15d9185.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/media/photo.317771db.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.b2f246c5.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/css/main.b2f246c5.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.971c3f1d.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/static/js/main.971c3f1d.js.map" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/asset-manifest.json" afterPath="$PROJECT_DIR$/build/asset-manifest.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/index.html" afterPath="$PROJECT_DIR$/build/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/service-worker.js" afterPath="$PROJECT_DIR$/build/service-worker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/Admin.css" afterPath="$PROJECT_DIR$/src/components/admin/Admin.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/blog/PostList.js" afterPath="$PROJECT_DIR$/src/components/admin/blog/PostList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/media/CardMediaForm.js" afterPath="$PROJECT_DIR$/src/components/admin/media/CardMediaForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/media/MediaList.js" afterPath="$PROJECT_DIR$/src/components/admin/media/MediaList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/quotes/CardQuoteList.js" afterPath="$PROJECT_DIR$/src/components/admin/quotes/CardQuoteList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/blog/BlogDetail.js" afterPath="$PROJECT_DIR$/src/components/blog/BlogDetail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/btn/Btn.css" afterPath="$PROJECT_DIR$/src/components/btn/Btn.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/login/Login.css" afterPath="$PROJECT_DIR$/src/components/login/Login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/media/Media.css" afterPath="$PROJECT_DIR$/src/components/media/Media.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/media/MediaContainer.js" afterPath="$PROJECT_DIR$/src/components/media/MediaContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js" afterPath="$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/nav/Nav.js" afterPath="$PROJECT_DIR$/src/components/nav/Nav.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes.js" afterPath="$PROJECT_DIR$/src/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/contacto/Contacto.css" afterPath="$PROJECT_DIR$/src/components/contacto/Contacto.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/contacto/ContactoDisplay.js" afterPath="$PROJECT_DIR$/src/components/contacto/ContactoDisplay.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -69,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Contacto.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Contacto.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/contacto/Contacto.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
+            <state relative-caret-position="17">
+              <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -133,12 +115,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContactoDisplay.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ContactoDisplay.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/contacto/ContactoDisplay.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="153">
+              <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -225,11 +209,11 @@
         <option value="$PROJECT_DIR$/src/components/nav/Nav.js" />
         <option value="$PROJECT_DIR$/src/components/contacto/Contacto.js" />
         <option value="$PROJECT_DIR$/src/routes.js" />
-        <option value="$PROJECT_DIR$/src/components/contacto/Contacto.css" />
         <option value="$PROJECT_DIR$/src/components/btn/Btn.css" />
         <option value="$PROJECT_DIR$/src/components/login/Login.css" />
         <option value="$PROJECT_DIR$/src/components/admin/Admin.css" />
         <option value="$PROJECT_DIR$/src/components/contacto/ContactoDisplay.js" />
+        <option value="$PROJECT_DIR$/src/components/contacto/Contacto.css" />
       </list>
     </option>
   </component>
@@ -759,12 +743,12 @@
       <workItem from="1527204398801" duration="57000" />
       <workItem from="1527205459816" duration="3874000" />
       <workItem from="1527352450002" duration="1621000" />
-      <workItem from="1527382458212" duration="5297000" />
+      <workItem from="1527382458212" duration="5599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61444000" />
+    <option name="totallyTimeSpent" value="61746000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="40" y="23" width="1240" height="777" extended-state="6" />
@@ -930,7 +914,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1038,7 +1022,7 @@
         <state relative-caret-position="289">
           <caret line="42" column="42" lean-forward="true" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1056,7 +1040,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="62" selection-end-column="1" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1084,8 +1068,8 @@
         <state relative-caret-position="323">
           <caret line="51" column="62" lean-forward="false" selection-start-line="51" selection-start-column="62" selection-end-line="51" selection-end-column="62" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#189#243#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
+            <element signature="e#189#243#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1095,7 +1079,7 @@
         <state relative-caret-position="238">
           <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1105,7 +1089,7 @@
         <state relative-caret-position="187">
           <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1123,7 +1107,7 @@
         <state relative-caret-position="391">
           <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
           <folding>
-            <element signature="e#1#27#0" expanded="true" />
+            <element signature="e#1#27#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1190,14 +1174,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/contacto/Contacto.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="10" lean-forward="false" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/btn/Btn.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1210,8 +1186,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/contacto/ContactoDisplay.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+        <state relative-caret-position="153">
+          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/contacto/Contacto.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
           <folding />
         </state>
       </provider>

@@ -6,8 +6,10 @@ import Boton from '../btn/Btn';
 export const ContactoDisplay = () => {
 
     return (
-        <div className="contacto">
+        <div>
             <Nav />
+        <div className="contacto">
+
             <div className="back_ctc">
 
             </div>
@@ -27,6 +29,7 @@ export const ContactoDisplay = () => {
                 </div>
                 <Boton text="Enviar"/>
             </div>
+        </div>
         </div>
     );
 }
