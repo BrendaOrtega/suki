@@ -12,6 +12,7 @@ import {MediaDisplayDetail} from './components/media/MediaDisplayDetail';
 import ImgContainer from './components/img/ImgContainer';
 import {ImgDetailDisplay} from './components/img/ImgDetailDisplay';
 import EditPost from './components/admin/blog/EditPost';
+import Contacto from './components/contacto/Contacto';
 
 
 export const Routes = () => (
@@ -20,12 +21,13 @@ export const Routes = () => (
         <Route path="/admin" component={Admin} />
         <Route path="/login" component={Login} />
         <Route path="/about" component={About}/>
+            <Route path="/contacto" component={Contacto}/>
         <Route exact path="/media" component={MediaContainer} />
         <Route path="/media/detail/:id" component={MediaDisplayDetail} />
         <Route exact path="/blog" component={BlogContainer} />
         <Route path="/blog/detail/:id" component={BlogDetail} />
-        <Route exact path="/photo" component={ImgContainer} />
-        <Route path="/photo/detail" component={ImgDetailDisplay} />
+        {/*<Route exact path="/photo" component={ImgContainer} />*/}
+        {/*<Route path="/photo/detail" component={} />*/}
         <Route path="/test" component={EditPost} />
     </Switch>
 );

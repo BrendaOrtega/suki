@@ -14,7 +14,7 @@
     margin-top: 250px;
  }
 .btn_pink{
-    background-color: #f48687;
+    background-color: rgb(255,196,0);
     width:120px;
     height:40px;
     color:white;
@@ -296,6 +296,16 @@ input:focus, textarea:active{
     margin-left: -1.5px;
     color: rgba(0,0,0,.44);
     margin-bottom: 10px;
+}
+
+
+.box_contenido{
+    width: 90%;
+    padding: 5%;
+    margin: 0 auto;
+}
+.box_contenido h2{
+    text-align: center;
 }
 
 

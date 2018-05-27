@@ -29,7 +29,7 @@ class Nav extends Component {
                         </Link>
                     </Menu.Item>
                     <Menu.Item key="app" >
-                        <Link to="/photo">
+                        <Link to="/media">
                             <span>Fotografía</span>
                         </Link>
                     </Menu.Item>
@@ -40,7 +40,7 @@ class Nav extends Component {
                     </Menu.Item>
                     <SubMenu title={<span>Proyectos</span>}>
                         <Menu.Item key="blog" >
-                            <Link to="/media">
+                            <Link to="/">
                                 <span>Personales</span>
                             </Link>
                         </Menu.Item>
@@ -55,6 +55,11 @@ class Nav extends Component {
                             </Link>
                         </Menu.Item>
                     </SubMenu>
+                    <Menu.Item key="contacto" >
+                        <Link to="/contacto">
+                            <span>Contacto</span>
+                        </Link>
+                    </Menu.Item>
                     <Menu.Item key="face" >
                         <Link to="/" target='blank'>
                             <FontAwesome name="facebook-square" />

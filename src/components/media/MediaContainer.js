@@ -39,7 +39,7 @@ class BlogContainer extends Component {
                 <Slide />
                 <Nav />
 
-                <h2 className="subtitulo">Proyectos Personales</h2>
+                <h2 className="subtitulo">Fotografía</h2>
                 <hr className="line_gris"/>
                 <div className="box_blog">
 

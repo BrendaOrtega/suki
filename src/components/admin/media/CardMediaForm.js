@@ -135,7 +135,7 @@ class CardMediaForm extends Component{
                               </Tooltip>
                             </span>
                         )}>
-                        <input className="inp_t" type="text" placeholder="Lugar"/>
+                        <input className="inp_t" onChange={this.onChange}  value={newAlbum.place} name="place" type="text" placeholder="Lugar"/>
                     </FormItem>
                     <FormItem
                         label={(
@@ -146,7 +146,7 @@ class CardMediaForm extends Component{
                               </Tooltip>
                             </span>
                         )}>
-                        <MonthPicker style={{border:"none !important"}} onChange={onChange} placeholder="Select month" />
+                        <MonthPicker style={{border:"none !important"}} onChange={this.onChange}  value={newAlbum.fecha} name="fecha" placeholder="Select month" />
                     </FormItem>
                     <FormItem
                         label={(

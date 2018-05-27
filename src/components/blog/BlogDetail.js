@@ -3,7 +3,8 @@ import toastr from 'toastr';
 import {getPost} from '../../services/firebase';
 import Editor from 'draft-js-plugins-editor'; // Error upon doing this
 import { convertFromRaw, EditorState} from 'draft-js';
-
+import Slide from '../home/Slide';
+import Nav from '../nav/Nav';
 
 
 
@@ -42,11 +43,18 @@ export class BlogDetail extends Component{
         const {editorState} = this.state;
         const {title} = this.state.post;
         return(
-            <div style={{position:'relative', margin:'0 auto', width:'80%'}}>
-                <h2>{title}</h2>
-                <EditorWithFancyBlockquotes 
-                editorState={editorState}
-                readOnly={true} />
+
+            <div>
+                <div>
+                    <Slide />
+                </div>
+                <Nav />
+                <div style={{position:'relative', margin:'50px auto', width:'80%'}}>
+                    <h2>{title}</h2>
+                    <EditorWithFancyBlockquotes
+                    editorState={editorState}
+                    readOnly={true} />
+                </div>
             </div>
         );
     }

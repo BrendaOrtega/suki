@@ -18,3 +18,17 @@
     flex-grow: 1;
     margin: 0 20px;
 }
+.flexito{
+    width: 80%;
+    height:300px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+ }
+.images_al{
+    width:200px;
+    height:200px;
+    margin: 20px;
+}
