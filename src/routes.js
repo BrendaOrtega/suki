@@ -13,7 +13,7 @@ import ImgContainer from './components/img/ImgContainer';
 import {ImgDetailDisplay} from './components/img/ImgDetailDisplay';
 import EditPost from './components/admin/blog/EditPost';
 import Contacto from './components/contacto/Contacto';
-
+import PartnersContainer from './components/partners/PartnersContainer';
 
 export const Routes = () => (
     <Switch>
@@ -26,6 +26,7 @@ export const Routes = () => (
         <Route path="/media/detail/:id" component={MediaDisplayDetail} />
         <Route exact path="/blog" component={BlogContainer} />
         <Route path="/blog/detail/:id" component={BlogDetail} />
+            <Route path="/partner" component={PartnersContainer}/>
         {/*<Route exact path="/photo" component={ImgContainer} />*/}
         {/*<Route path="/photo/detail" component={} />*/}
         <Route path="/test" component={EditPost} />

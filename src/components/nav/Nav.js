@@ -39,18 +39,18 @@ class Nav extends Component {
                         </Link>
                     </Menu.Item>
                     <SubMenu title={<span>Proyectos</span>}>
-                        <Menu.Item key="blog" >
+                        <Menu.Item key="personales" >
                             <Link to="/">
                                 <span>Personales</span>
                             </Link>
                         </Menu.Item>
-                        <Menu.Item key="blog" >
+                        <Menu.Item key="profesionales" >
                             <Link to="/">
                                 <span>Profesionales</span>
                             </Link>
                         </Menu.Item>
-                        <Menu.Item key="blog" >
-                            <Link to="/">
+                        <Menu.Item key="part" >
+                            <Link to="/partner">
                                 <span>Partnership</span>
                             </Link>
                         </Menu.Item>
@@ -61,24 +61,24 @@ class Nav extends Component {
                         </Link>
                     </Menu.Item>
                     <Menu.Item key="face" >
-                        <Link to="/" target='blank'>
+                        <a href="https://www.facebook.com/lasuki" target='blank'>
                             <FontAwesome name="facebook-square" />
-                        </Link>
+                        </a>
                     </Menu.Item>
-                    <Menu.Item key="insta" target='blank'>
-                        <Link to="https://www.instagram.com/lasuki/">
+                    <Menu.Item key="insta" >
+                        <a href="https://www.instagram.com/lasuki/" target='blank'>
                             <FontAwesome name="instagram" />
-                        </Link>
+                        </a>
                     </Menu.Item>
-                    <Menu.Item key="twit" target='blank'>
-                        <Link to="https://www.linkedin.com/in/alejandra-armendariz-a6337655/">
+                    <Menu.Item key="twit" >
+                        <a href="https://www.linkedin.com/in/alejandra-armendariz-a6337655/" target='blank'>
                             <FontAwesome name="linkedin" />
-                        </Link>
+                        </a>
                     </Menu.Item>
-                    <Menu.Item key="youtube" target='blank'>
-                        <Link to="https://www.youtube.com/channel/UCKL_aq2mKWzj_e-lVusIF9Q?view_as=subscriber">
+                    <Menu.Item key="youtube" >
+                        <a href="https://www.youtube.com/channel/UCKL_aq2mKWzj_e-lVusIF9Q?view_as=subscriber" target='blank'>
                             <FontAwesome name="youtube" />
-                        </Link>
+                        </a>
                     </Menu.Item>
                 </Menu>
             </div>
