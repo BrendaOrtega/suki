@@ -8,7 +8,7 @@ export const ContactoDisplay = () => {
     return (
         <div>
             <Nav />
-        <div className="contacto">
+            <div className="contacto">
 
             <div className="back_ctc">
 

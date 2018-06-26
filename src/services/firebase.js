@@ -34,6 +34,7 @@ import firebase from 'firebase';
   const mediaRef = db.ref('media');
   const blogRef = db.ref('blog');
   const videoRef = db.ref('videos');
+const partnersRef = db.ref('partner');
 
   //posts
   /*save*/
@@ -115,7 +116,34 @@ export function getPost(id){
             return e;
         })
   }
-
+export function savePartner(partner){
+    partner['date'] = Date.now()
+    return partnersRef.push(partner)
+        .then(snap=>{
+            return snap
+        })
+        .catch(e=>{
+            console.log(e)
+            return e;
+        })
+}
+export function getPartners(partner){
+    return partnersRef.once("value")
+        .then(snap=>{
+            const ob = snap.val();
+            const list = [];
+            for(let key in ob){
+                const post = ob[key];
+                post['key'] = key;
+                list.push(post);
+            }
+            return list;
+        })
+        .catch(e=>{
+            console.log(e)
+            return e;
+        })
+}
   /* GetAll */
   export function getQuotes(quote){
     return quotesRef.once("value")

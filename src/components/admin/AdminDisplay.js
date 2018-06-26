@@ -13,7 +13,7 @@ import Post from './Post';
 import NewPost from './blog/NewPost';
 import PostList from './blog/PostList';
 import Footer from '../footer/Footer';
-
+import {PartnerForm} from '../admin/partner/PartnerForm';
 
 const SubMenu = Menu.SubMenu;
 
@@ -97,11 +97,18 @@ class AdminDisplay extends Component {
                                 </Link>
                             </Menu.Item>
                         </SubMenu>
-                        <Menu.Item key="13">
-                            <Icon type="desktop" /><span>Partners</span>
-                            <Link to="/admin/mijo">
-                            </Link>
-                        </Menu.Item>
+                        <SubMenu key="sub5" title={<span><Icon type="scan" /><span>Partners</span></span>}>
+                            <Menu.Item key="13">
+                                <Icon type="edit" /><span>Nuevo Partner</span>
+                                <Link to="/admin/partners/new">
+                                </Link>
+                            </Menu.Item>
+                            <Menu.Item key="14">
+                                <Icon type="copy" /><span>Contenido</span>
+                                <Link to="/admin/videos">
+                                </Link>
+                            </Menu.Item>
+                        </SubMenu>
 
                     </Menu>
                     <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
@@ -122,6 +129,7 @@ class AdminDisplay extends Component {
                 <Route exact path="/admin/videos" component={VideoList} />
                 <Route path="/admin/videos/new" component={CardVideoForm} />
 
+                <Route path="/admin/partners/new" component={PartnerForm}/>
                 <Route exact path="/admin" component={AdminHome} />
             </div>
         );

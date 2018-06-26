@@ -62,6 +62,13 @@ class CardMediaForm extends Component{
         newAlbum[field] = value;
         this.setState({newAlbum});
     };
+    onChanger = (date, dateString) => {
+    console.log(date, dateString);
+        const {newAlbum} = this.state;
+        newAlbum["fecha"] = dateString;
+        newAlbum["moment"] = date;
+        this.setState({newAlbum});
+};
 
     saveAlbum = () => {
         const {newAlbum} = this.state;
@@ -69,11 +76,13 @@ class CardMediaForm extends Component{
         .then(links=>{
             newAlbum.pics = links;
             console.log(newAlbum);
+            delete newAlbum.moment;
             return saveAlbum(newAlbum)
         })
         .then(res=>{
             this.setState({loading:false})
             toastr.success('se subieron las imagenes');
+            console.log(newAlbum)
         })
         .catch(e=>{
             console.log(e);
@@ -146,7 +155,7 @@ class CardMediaForm extends Component{
                               </Tooltip>
                             </span>
                         )}>
-                        <MonthPicker style={{border:"none !important"}} onChange={this.onChange}  value={newAlbum.fecha} name="fecha" placeholder="Select month" />
+                        <MonthPicker style={{border:"none !important"}} onChange={this.onChanger}  value={newAlbum.moment} name="moment" placeholder="Select month" />
                     </FormItem>
                     <FormItem
                         label={(

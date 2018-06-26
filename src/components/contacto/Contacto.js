@@ -10,7 +10,7 @@ class Contacto extends Component {
     }
     render() {
         return (
-            <div id="contacto">
+            <div id="contacto" >
                 <ContactoDisplay />
             </div>
         );
