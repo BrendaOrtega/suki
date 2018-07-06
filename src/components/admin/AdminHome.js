@@ -8,6 +8,9 @@ export const AdminHome = ({}) => (
             <p>A place where words matter.</p>
             <br/>
             <button className="btn_pink">Empezar</button>
+            <Link to="/">
+                <button className="btn_pink">Ir a home</button>
+            </Link>
         </div>
     </section>
 );

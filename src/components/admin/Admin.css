@@ -19,6 +19,7 @@
     height:40px;
     color:white;
     border: none;
+    margin: 0 10px;
 }
 
 
@@ -315,6 +316,11 @@ input:focus, textarea:active{
     text-align: center;
 }
 
-
+.ant-switch-checked{
+    background-color: rgb(255,196,0) !important;
+}
+.ant-pagination-item-active{
+    border-color:rgb(255,196,0) !important;
+}
 
 

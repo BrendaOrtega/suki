@@ -10,9 +10,7 @@ class Footer extends Component {
                 <div className="flexx">
                     <span>Copyrigth Suki 2018 @</span>
                     <div>
-                        <Link to="/">
-                            <span>Home</span>
-                        </Link>
+
                         <Link to="/login">
                             <span>Admin</span>
                         </Link>

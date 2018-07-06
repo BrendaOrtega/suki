@@ -214,7 +214,7 @@ class NewPost extends Component{
                  <Input onChange={this.onChangeTitle} value={title} style={{width:'600px', fontSize:'200%'}} placeholder="Un titulo genial" size="large" /> 
                 </Menu.Item>
                 <Menu.Item title="SubMenu" >
-                    <Button onClick={this.onSave} type="primary" size="large">Guardar</Button>
+                    <Button  style={{backgroundColor:"rgb(255,196,0)", border:"1px solid rgb(255,196,0)"}} onClick={this.onSave} type="primary" size="large">Guardar</Button>
                 </Menu.Item>
                 </Menu>
 
