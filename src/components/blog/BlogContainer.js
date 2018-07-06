@@ -5,7 +5,8 @@ import Slide from '../home/Slide';
 import Nav from '../nav/Nav';
 import CardBlog from '../card/CardBlog';
 import Footer from '../footer/Footer';
-import {getPosts} from '../../services/firebase';
+//import {getPosts} from '../../services/firebase';
+import {getPublic} from '../../services/heroku';
 import toastr from 'toastr';
 import {Spin} from 'antd';
 
@@ -16,7 +17,7 @@ class BlogContainer extends Component {
     }
 
     componentWillMount(){
-        getPosts()
+        getPublic('BLOG_POST', this.props.important || false)
         .then(posts=>{
             console.log(posts)
             this.setState({posts})
@@ -46,7 +47,7 @@ class BlogContainer extends Component {
 
 
                     {this.state.posts.map(post=>{
-                        return <CardBlog id={post.key} key={post.key} {...post} />
+                        return <CardBlog key={post._id} {...post} />
                     })}
 
                 </div>

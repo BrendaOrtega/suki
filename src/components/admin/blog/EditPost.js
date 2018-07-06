@@ -8,7 +8,7 @@ import {convertToRaw} from 'draft-js';
 class EditPost extends Component{
 
 
-    state = {editorState: createEditorStateWithText("#zavala putia")};
+    state = {editorState: createEditorStateWithText("#zavala ut")};
       
     running = 0;
 

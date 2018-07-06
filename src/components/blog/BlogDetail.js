@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import toastr from 'toastr';
-import {getPost} from '../../services/firebase';
+//import {getPost} from '../../services/firebase';
+import {getPost} from '../../services/heroku';
 import Editor, {composeDecorators} from 'draft-js-plugins-editor'; // Error upon doing this
 import { convertFromRaw, EditorState} from 'draft-js';
 import Slide from '../home/Slide';

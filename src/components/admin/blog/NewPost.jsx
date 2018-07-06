@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
 import toastr from 'toastr';
 import {Layout, Input, Menu, Button} from 'antd';
+import { Switch, Select } from 'antd';
+
 // import {LastForm} from './LastForm';
 import {PostForm} from './PostForm';
 import './editorStyles.css';
-import {getPost, saveOrUpdatePost} from '../../../services/firebase';
+//import {getPost, saveOrUpdatePost} from '../../../services/firebase';
 import { createEditorStateWithText, createWithContent } from 'draft-js-plugins-editor';
 import {convertToRaw, convertFromRaw, EditorState} from 'draft-js';
+
+//heroku
+import {savePost, getPost} from '../../../services/heroku';
+const Option = Select.Option;
 const Header = Layout.Header;
 
 class NewPost extends Component{
@@ -25,8 +31,11 @@ class NewPost extends Component{
         if(this.props.match.params.id){
             getPost(this.props.match.params.id)
             .then(post=>{
+                console.log(post)
                 // console.log(post);
-                const editorState = this.convertFromJson(post.body)
+                //const editorState = this.convertFromJson(post.body)
+                const editorState = this.convertFromJson(post.body);
+                console.log(editorState);
                 this.setState({editorState, post})
             })
             .catch(e=>{
@@ -37,59 +46,6 @@ class NewPost extends Component{
         }
     }
 
-    // onChangeTitle = (e) => {
-    //     const {post} = this.state;
-    //     post['title'] = e.target.value;
-    //     this.setState({post});
-    // };
-
-    // onSave = (content) => {
-    //     const {post} = this.state;
-    //     console.log(post);
-    //     post['body'] = JSON.stringify(content);
-    //     this.findTitle(content)
-    //     saveOrUpdatePost(post)
-    //     .then(r=>{
-    //         console.log(r)
-    //         toastr.success('se guardo');
-    //         post['body'] = JSON.parse(post.body);
-    //         post['key'] = r;
-    //         this.setState({post});
-    //     })
-    //     .catch(e=>{
-    //         toastr.error('no se guardo')
-    //     })
-    // };
-
-    // findTitle = (content) => {
-    //     const block = content.blocks.find(b=>{
-    //         return b.type === "header-one";
-    //     });
-    //     if(!block) return;
-    //     const {post} = this.state;
-    //     post['title'] = block.text;
-    //     this.setState({post});
-    // }
-
-    // forceSave = (content) => {
-    //     console.log(content);
-    // };
-
-    // componentWillMount(){
-    //     if(this.props.match.params.id){
-    //         console.log(this.props.match.params.id)
-    //         getPost(this.props.match.params.id) 
-    //         .then(post=>{
-    //             post.body = createWithContent(convertFromRaw(post.body));
-    //             console.log(post.body);
-    //             this.setState({post, editorState:post.body});
-    //         })
-    //         .catch(e=>{
-    //             console.log(e)
-    //             toastr.error(e)
-    //         })
-    //     }
-    // }
 
     onChangeTitle = (e) => {
         const {post} = this.state;
@@ -103,27 +59,112 @@ class NewPost extends Component{
 
     onSave = () => {
         const {post, editorState} = this.state;
-        const jsonFormat = this.convertToJson(editorState);
+        const raw = convertToRaw( editorState.getCurrentContent() ) ;
+        const jsonFormat = JSON.stringify(raw);
+        console.log(jsonFormat)
+        //post.body = raw;
         post.body = jsonFormat;
-
-
-     saveOrUpdatePost(post)
+        savePost(post)
         .then(r=>{
-            toastr.success('se guardo');
-            post.key = r; 
-            console.log(r);
-        //convertir de vuelta
-            // post.body = this.convertFromJson()
-            this.setState({post});
+            toastr.success('Tu post se guardó correctamente');
         })
         .catch(e=>{
-            console.log(e);
-            toastr.error('no se guardo')
+            console.log(e)
+            toastr.error('No se pudo guardar')
         })
+
+        //testing with node
+        // let {post, editorState} = this.state;
+        // const raw = convertToRaw( editorState.getCurrentContent() ) ;
+        // post.body = raw;
+        // //const enJson = JSON.stringify(post);
+        // //const enJson = JSON.stringify(post);
+        // var cache = [];
+        // const enJson = JSON.stringify(post, function(key, value) {
+        //     if (typeof value === 'object' && value !== null) {
+        //         if (cache.indexOf(value) !== -1) {
+        //             // Circular reference found, discard key
+        //             return;
+        //         }
+        //         // Store value in our collection
+        //         cache.push(value);
+        //     }
+        //     return value;
+        // });
+        // //mandamos a node:
+        // fetch('http://localhost:3000/posts', {
+        //     method: 'post',
+        //     body: enJson,
+        //     headers:{
+        //         'Content-Type': 'application/json'
+        //     }
+        // })
+        // .then(response=>response.json())
+        // .then(r=>{
+        //     console.log(r)
+        // });
+        // return;
+        
+
+
+
+        // const {post, editorState} = this.state;
+        // //const jsonFormat = this.convertToJson(editorState);
+        // //const jsonFormat = JSON.stringify( convertToRaw( editorState.getCurrentContent() )  );
+        // const raw = convertToRaw( editorState.getCurrentContent() );
+        // post.body = raw;
+       
+        // var cache = [];
+        // const jsonRaw = JSON.stringify(post, function(key, value) {
+        //     if (typeof value === 'object' && value !== null) {
+        //         if (cache.indexOf(value) !== -1) {
+        //             console.log(value);
+        //             // Circular reference found, discard key
+        //             return;
+        //         }
+        //         // Store value in our collection
+        //         cache.push(value);
+        //     }
+        //     return value;
+        // });
+        // fetch('http://localhost:3000/posts', {
+        //     method: 'post',
+        //     body: jsonRaw,
+        //     headers:{
+        //         'Content-Type': 'application/json'
+        //     }
+        // })
+        // .then(response=>response.json())
+        // .then(r=>{
+        //     console.log(r)
+        // });
+
+    //  saveOrUpdatePost(post)
+    //     .then(r=>{
+    //         toastr.success('se guardo');
+    //         post.key = r; 
+    //         console.log(r);
+    //     //convertir de vuelta
+    //         // post.body = this.convertFromJson()
+    //         this.setState({post});
+    //     })
+    //     .catch(e=>{
+    //         console.log(e);
+    //         toastr.error('no se guardo')
+    //     })
     };
 
     convertFromJson = (jsonFormat) => {
         const raw = JSON.parse(jsonFormat);
+        const content = convertFromRaw(raw);
+        const editorState = EditorState.push(EditorState.createEmpty(), content);
+        // const editorState = createWithContent(content);
+        return editorState;
+
+    };
+
+    makeEditorState = (raw) => {
+        //const raw = JSON.parse(jsonFormat);
         const content = convertFromRaw(raw);
         const editorState = EditorState.push(EditorState.createEmpty(), content);
         // const editorState = createWithContent(content);
@@ -150,21 +191,49 @@ class NewPost extends Component{
         return converted;
     }
 
+    changePublic = (value) => {
+        const {post} = this.state;
+        post.status = value ? "PUBLISHED" : "DRAFT";
+        this.setState({post});
+    }
+
+    changeType = (value) => {
+        const {post} = this.state;
+        post.tipo = value;
+        this.setState({post});
+    };
+
     render(){
         const {editorState} = this.state;
-        const {title} = this.state.post;
-        // console.log(post);
-        // if(!showEditor) return <div>Loading...</div>
+        const {title, status, tipo} = this.state.post;
+
         return(
             <div >
                 <Menu style={{position:'fixed', zIndex:999}} mode="horizontal" >
                 <Menu.Item>
                  <Input onChange={this.onChangeTitle} value={title} style={{width:'600px', fontSize:'200%'}} placeholder="Un titulo genial" size="large" /> 
                 </Menu.Item>
-                <Menu.Item title="SubMenu">
+                <Menu.Item title="SubMenu" >
                     <Button onClick={this.onSave} type="primary" size="large">Guardar</Button>
                 </Menu.Item>
                 </Menu>
+
+                    <div style={{display:'flex', paddingTop:60, justifyContent:'flex-end', alignItems:'center'}}>
+                        <h4 style={{marginRight:20}}>
+                            Publico 
+                            <Switch checked={status == "PUBLISHED"}  onChange={this.changePublic} />
+                        </h4>
+                        <h4>
+                            Tipo
+                            <Select value={tipo || "BLOG_POST"} defaultValue="BLOG_POST" style={{ width: 120 }} onChange={this.changeType}>
+                                    <Option value="BLOG_POST">Post</Option>
+                                    <Option value="PROFESIONAL">Profesional</Option>
+                                    <Option value="PERSONAL" disabled>Personal</Option>
+                                </Select>
+                        </h4>
+   
+                    </div>
+
                 <PostForm 
                 editorState={editorState}
                 onChange={this.onChange}
