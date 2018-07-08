@@ -3,7 +3,8 @@ import React, {Component} from 'react';
 import {getPosts, savePost} from '../../../services/heroku';
 import toastr from 'toastr';
 import {Link} from 'react-router-dom';
-import {Table, Switch} from 'antd';
+import {Table, Switch, Select} from 'antd';
+const Option = Select.Option;
 
 
 
@@ -32,7 +33,7 @@ export default class PostList extends Component{
 
         savePost(post)
         .then(r=>{
-            toastr.success('Tu post se guardó');
+            toastr.info('Actualizado');
                     //if yes
             const posts = this.state.posts.map(p=>{
                 if(p._id === post._id) return post;
@@ -49,8 +50,52 @@ export default class PostList extends Component{
         //console.log(value,post)
     }
 
+    shutOff = (status, post) => {
+        if(status){
+            status = "PUBLISHED";
+            post.status = status;
+        }else{
+            status = "OFF";
+            post.status = status;
+        }
+        savePost(post)
+        .then(r=>{
+            toastr.info('Actualizado');
+                    //if yes
+            const posts = this.state.posts.map(p=>{
+                if(p._id === post._id) return post;
+                return p;
+            });
+            this.setState({posts});
+        })
+        .catch(e=>{
+            console.log(e);
+            toastr.error('No se pudo guardar', e)
+        });
+    };
+
+    changeType = (value, post) => {
+        post.tipo = value;
+        savePost(post)
+        .then(r=>{
+            toastr.info('Actualizado');
+                    //if yes
+            const posts = this.state.posts.map(p=>{
+                if(p._id === post._id) return post;
+                return p;
+            });
+            this.setState({posts});
+        })
+        .catch(e=>{
+            console.log(e);
+            toastr.error('No se pudo guardar', e)
+        });
+    };
+    
+
     render(){
         const {posts} = this.state;
+        //posts.reverse();
         return (
 
 
@@ -84,6 +129,26 @@ export default class PostList extends Component{
                             dataIndex="important"
                             key="important"
                             render={(important, record)=><Switch checked={important} onChange={(value)=>this.putOnHomePage(value,record)} />}
+                        />
+
+                        <Column
+                            title="Publicado"
+                            dataIndex="status"
+                            key="status"
+                            render={(status, record)=><Switch checked={status === "PUBLISHED"} onChange={(status)=>this.shutOff(status,record)} />}
+                        />
+
+                        <Column
+                            title="Tipo"
+                            dataIndex="tipo"
+                            key="tipo"
+                            render={(tipo, record)=>{
+                                return (<Select value={tipo || "BLOG_POST"} defaultValue="BLOG_POST" style={{ width: 100 }} onChange={(tipo)=>this.changeType(tipo, record)}>
+                                    <Option value="BLOG_POST">Post</Option>
+                                    <Option value="PROFESIONAL">Profesional</Option>
+                                    <Option value="PERSONAL" disabled>Personal</Option>
+                                </Select>)
+                            }}
                         />
 
 

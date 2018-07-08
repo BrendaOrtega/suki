@@ -4,7 +4,8 @@ import { Form, Icon, Tooltip } from 'antd';
 import firebase from '../../../services/firebase';
 import toastr from 'toastr';
 import { Spin, Alert } from 'antd';
-import {saveAlbum, storage} from '../../../services/firebase';
+import {storage} from '../../../services/firebase';
+import {saveAlbum} from '../../../services/heroku';
 
 import { DatePicker } from 'antd';
 
@@ -66,7 +67,7 @@ class CardMediaForm extends Component{
     console.log(date, dateString);
         const {newAlbum} = this.state;
         newAlbum["fecha"] = dateString;
-        newAlbum["moment"] = date;
+        newAlbum["date"] = date;
         this.setState({newAlbum});
 };
 
@@ -155,7 +156,7 @@ class CardMediaForm extends Component{
                               </Tooltip>
                             </span>
                         )}>
-                        <MonthPicker style={{border:"none !important"}} onChange={this.onChanger}  value={newAlbum.moment} name="moment" placeholder="Select month" />
+                        <MonthPicker style={{border:"none !important"}} onChange={this.onChanger}  value={newAlbum.date} name="moment" placeholder="Select month" />
                     </FormItem>
                     <FormItem
                         label={(
