@@ -40,12 +40,12 @@ class Nav extends Component {
                     </Menu.Item>
                     <SubMenu title={<span>Proyectos</span>}>
                         <Menu.Item key="personales" >
-                            <Link to="/">
+                            <Link to="/proyectos/personales">
                                 <span>Personales</span>
                             </Link>
                         </Menu.Item>
                         <Menu.Item key="profesionales" >
-                            <Link to="/">
+                            <Link to="/proyectos/profesionales">
                                 <span>Profesionales</span>
                             </Link>
                         </Menu.Item>

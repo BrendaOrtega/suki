@@ -24,11 +24,25 @@ class AdminDisplay extends Component {
         collapsed: false,
         openKeys:[]
     }
+    // componentWillMount() {
+    //     let user = localStorage.getItem("user");
+    //     this.checkUser(user);
+    //     // user = JSON.parse(user);
+    //     if (user) {
+    //         // console.log("si")
+    //
+    //         this.setState({isLogged:true, user})
+    //     }else{
+    //         this.setState({isLogged:false})
+    //         this.props.history.push("/login");
+    //     }
+    // }
     toggleCollapsed = () => {
         this.setState({
             collapsed: !this.state.collapsed,
         });
     }
+
 
     render() {
         const {openKeys} = this.state;
@@ -97,7 +111,7 @@ class AdminDisplay extends Component {
                                 </Link>
                             </Menu.Item>
                         </SubMenu>
-                        <SubMenu key="sub5" title={<span><Icon type="scan" /><span>Partners</span></span>}>
+                        <SubMenu key="sub5" title={<span><Icon type="idcard" /><span>Partners</span></span>}>
                             <Menu.Item key="13">
                                 <Icon type="edit" /><span>Nuevo Partner</span>
                                 <Link to="/admin/partners/new">
@@ -111,9 +125,7 @@ class AdminDisplay extends Component {
                         </SubMenu>
 
                     </Menu>
-                    <Button type="primary" onClick={this.toggleCollapsed} style={{ marginBottom: 16 }}>
-                        <Icon type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'} />
-                    </Button>
+
                 </div>
 
                 <Route exact path="/admin/posts" component={PostList}/>

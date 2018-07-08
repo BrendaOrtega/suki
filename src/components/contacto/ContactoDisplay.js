@@ -2,7 +2,7 @@ import React from 'react';
 import './Contacto.css';
 import Nav from '../nav/Nav';
 import Boton from '../btn/Btn';
-
+import Footer from '../footer/Footer'
 export const ContactoDisplay = () => {
 
     return (
@@ -30,6 +30,7 @@ export const ContactoDisplay = () => {
                 <Boton text="Enviar"/>
             </div>
         </div>
+            <Footer />
         </div>
     );
 }

@@ -19,14 +19,15 @@
     height:40px;
     color:white;
     border: none;
+    margin: 0 10px;
 }
 
 
 .ant-menu-vertical .ant-menu-item:after, .ant-menu-vertical-left .ant-menu-item:after, .ant-menu-vertical-right .ant-menu-item:after, .ant-menu-inline .ant-menu-item:after{
-    border-right:3px solid  #f48687 !important;
+    border-right:3px solid rgb(255,196,0) !important;
 }
 .ant-menu-item-selected{
-    color:#f48687 !important;
+    color:rgb(255,196,0) !important;
 }
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
     background-color: rgba(244,134,135,0.2) !important;
@@ -163,7 +164,7 @@ input:focus, textarea:active{
     overflow: hidden;
 }
 .ant-menu-submenu-title:hover, .ant-menu-item:hover {
-    color: rgb(244,134,135) !important;
+    color: rgb(255,196,0) !important;
 }
 .ant-menu-submenu-arrow{
     /*display: none;*/
@@ -172,6 +173,13 @@ input:focus, textarea:active{
 }
 .ant-menu-submenu-title:hover .ant-menu-submenu-arrow{
     color:red !important;
+}
+
+.ant-menu-item:active, .ant-menu-submenu-title:active{
+    background: rgba(255,196,0,.2) !important;
+}
+.ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected{
+    color:inherit !important;
 }
 
 .ant-menu-item-selected {
@@ -184,7 +192,7 @@ input:focus, textarea:active{
     background-color: pink;
 }
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-    background-color: #fff3e0;
+    background-color: rgba(255,196,0,.1) !important;
 }
 .ant-menu-vertical .ant-menu-item:after, .ant-menu-vertical-left .ant-menu-item:after, .ant-menu-vertical-right .ant-menu-item:after, .ant-menu-inline .ant-menu-item:after {
 
@@ -308,6 +316,11 @@ input:focus, textarea:active{
     text-align: center;
 }
 
-
+.ant-switch-checked{
+    background-color: rgb(255,196,0) !important;
+}
+.ant-pagination-item-active{
+    border-color:rgb(255,196,0) !important;
+}
 
 
