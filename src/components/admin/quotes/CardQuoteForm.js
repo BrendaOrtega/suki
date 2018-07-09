@@ -1,7 +1,8 @@
 import React from 'react';
 import Btn from '../../btn/Btn';
 import { Form, Icon, Tooltip, Input } from 'antd';
-import {saveQuote} from '../../../services/firebase';
+//import {saveQuote} from '../../../services/firebase';
+import {saveQuote} from '../../../services/heroku';
 import toastr from 'toastr';
 
 const FormItem = Form.Item;
@@ -16,7 +17,7 @@ export class CardQuoteForm extends React.Component{
     onChange = (e) => {
         const {quote} = this.state;
         quote.author = this.refs.author.input.value
-        quote.text = this.refs.text.value;
+        quote.body = this.refs.text.value;
         this.setState({quote})
     }
 
@@ -28,7 +29,7 @@ export class CardQuoteForm extends React.Component{
             console.log(r)
         })
         .catch(e=>{
-            toastr.success('Algo falló al guardar tu frase')
+            toastr.error('Algo falló al guardar tu frase')
             console.log(e)
         });
     };

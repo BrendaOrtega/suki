@@ -6,7 +6,8 @@ import Nav from '../nav/Nav';
 import CardMedia from '../card/CardMedia';
 import Footer from '../footer/Footer';
 import toastr from 'toastr';
-import {getAlbums} from '../../services/firebase';
+//import {getAlbums} from '../../services/firebase';
+import {getAlbums} from '../../services/heroku';
 import {Spin} from 'antd';
 
 
@@ -24,6 +25,7 @@ class BlogContainer extends Component {
     componentWillMount(){
         getAlbums()
         .then(albums=>{
+            console.log(albums);
             this.setState({albums});
         })
         .catch(e=>{
