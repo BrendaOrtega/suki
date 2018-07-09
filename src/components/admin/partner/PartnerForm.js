@@ -62,7 +62,7 @@ export class PartnerForm extends React.Component{
                               </Tooltip>
                             </span>
                         )}>
-                        <input onChange={this.onChange} value={partner.name} name="name" className="inp_t" type="text" placeholder="Nombre del proyecto"/>
+                        <input onChange={this.onChange} value={partner.name} name="name" className="inp_t" type="text" placeholder="Nombre del proyecto" required=""/>
                     </FormItem>
                     <FormItem
                         label={(
@@ -73,7 +73,7 @@ export class PartnerForm extends React.Component{
                               </Tooltip>
                             </span>
                         )}>
-                        <input onChange={this.onChange} value={partner.cliente} name="cliente" className="inp_t" type="text" placeholder="Nombre del cliente"/>
+                        <input onChange={this.onChange} value={partner.cliente} name="cliente" className="inp_t" type="text" placeholder="Nombre del cliente" required=""/>
                     </FormItem>
                     <FormItem
                         label={(
@@ -84,7 +84,7 @@ export class PartnerForm extends React.Component{
                               </Tooltip>
                             </span>
                         )}>
-                        <input className="inp_t" onChange={this.onChange}  value={partner.place} name="place" type="text" placeholder="Lugar"/>
+                        <input className="inp_t" onChange={this.onChange}  value={partner.place} name="place" type="text" placeholder="Lugar" required=""/>
                     </FormItem>
 
                     <FormItem
@@ -96,7 +96,7 @@ export class PartnerForm extends React.Component{
                               </Tooltip>
                             </span>
                         )}>
-                        <textarea onChange={this.onChange} name="descript" className="inp_t" type="text" placeholder="Descripción del proyecto">{partner.descript}</textarea>
+                        <textarea onChange={this.onChange} name="descript" className="inp_t" type="text" placeholder="Descripción del proyecto" required=""></textarea>
                     </FormItem>
                     <FormItem
                         label={(

@@ -34,7 +34,7 @@ class PartnersContainer extends Component {
         return (
             <div >
                 <Slide />
-                <Nav />
+                <Nav/>
                 <div className="partners">
                     <h2>Clientes</h2>
                     <hr className="line_gris"/>
@@ -46,7 +46,7 @@ class PartnersContainer extends Component {
                         {partners.length ? null : <Spin />}
 
                         {partners.map(partner=>{
-                            return <dir><PartnersCard key={partner.key}  {...partner} id={partner.key} /></dir>
+                            return <div ><PartnersCard key={partner.key}  {...partner} id={partner.key} /></div>
                         })}
 
                     </div>

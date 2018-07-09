@@ -14,6 +14,7 @@
 .flex a{
     margin: 0 20px;
     color:#5e5e5e;
+    display: block;
 }
 .social a{
     margin: 0 4px !important;
@@ -22,7 +23,24 @@
 .ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected{
     border-bottom:2px solid rgb(255,196,0) !important;
 }
+@media(max-width: 450px) {
+
+    .flex{
+        width:1000px;
+        display: inline-block;
+    }
+    .nav{
+        height:60px;
+        overflow: hidden;
+        overflow-x: scroll;
+
+    }
+}
+.ant-menu-item, .ant-menu-submenu-title{
+    text-align: center !important;
+}
 /*.ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected{*/
     /*border-bottom: rgb(255,196,0) !important;*/
     /*color: rgb(255,196,0) !important;*/
 /*}*/
+
