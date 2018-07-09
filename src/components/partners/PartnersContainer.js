@@ -6,6 +6,7 @@ import {PartnersCard} from './PartnersCard';
 import toastr from 'toastr';
 import {getPartners} from '../../services/firebase';
 import {Spin} from 'antd';
+import Footer from '../footer/Footer';
 
 class PartnersContainer extends Component {
 
@@ -51,6 +52,7 @@ class PartnersContainer extends Component {
 
                     </div>
                 </div>
+                <Footer />
             </div>
         );
     }
