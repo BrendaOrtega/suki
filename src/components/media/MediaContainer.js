@@ -48,7 +48,7 @@ class BlogContainer extends Component {
                     {albums.length ? null : <Spin />}
 
                     {albums.map(album=>{
-                        return <dir><CardMedia key={album.key} cover={album.pics[0]} {...album} id={album.key} /></dir>
+                        return <dir><CardMedia key={album.key} cover={album.pics[0]} {...album} id={album._id} /></dir>
                     })}
                     
 

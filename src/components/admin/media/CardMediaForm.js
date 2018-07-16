@@ -9,6 +9,7 @@ import {saveAlbum} from '../../../services/heroku';
 
 import { DatePicker } from 'antd';
 
+const clear = {title:'', place:'', desc:'', pics:[]};
 const FormItem = Form.Item;
 const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
 function onChange(date, dateString) {
@@ -78,6 +79,8 @@ class CardMediaForm extends Component{
             newAlbum.pics = links;
             console.log(newAlbum);
             delete newAlbum.moment;
+            this.setState({newAlbum:clear});
+            this.removePics();
             return saveAlbum(newAlbum)
         })
         .then(res=>{
@@ -114,6 +117,11 @@ class CardMediaForm extends Component{
         return Promise.all(promises);
 
     };
+
+    removePics = () => {
+        this.preview.innerHTML=" ";
+
+    }
 
 
     render(){
@@ -167,7 +175,7 @@ class CardMediaForm extends Component{
                               </Tooltip>
                             </span>
                         )}>
-                        <textarea onChange={this.onChange} name="desc" className="inp_t" type="text" placeholder="Descripción del álbum">{newAlbum.desc}</textarea>
+                        <textarea onChange={this.onChange} value={newAlbum.desc} name="desc" className="inp_t" type="text" placeholder="Descripción del álbum"></textarea>
                     </FormItem>
                     <FormItem
                         label={(

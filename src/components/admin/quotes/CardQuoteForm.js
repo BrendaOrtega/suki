@@ -25,7 +25,7 @@ export class CardQuoteForm extends React.Component{
         saveQuote(this.state.quote)
         .then(r=>{
             toastr.success('Tu frase se guardó');
-            this.setState({quote:{}})
+            this.setState({quote:{text:''}})
             console.log(r)
         })
         .catch(e=>{
@@ -50,7 +50,7 @@ render(){
                   </Tooltip>
                 </span>
                 )}>
-                <textarea ref="text" onChange={this.onChange} className="inp_t" type="text" placeholder="The life is...">{this.state.quote.text}</textarea>
+                <textarea ref="text" value={this.state.quote.text} onChange={this.onChange} className="inp_t" type="text" placeholder="The life is..."></textarea>
                 <Input onChange={this.onChange} value={this.state.quote.author} placeholder="El author es opcional" ref="author" name="author"  />   
                 <div className="box_btn">
                     <Btn onClick={this.onSave} text="Guardar"/>

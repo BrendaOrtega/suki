@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b441ec67-f9af-4b8a-86c4-ab18c15a7483" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/AdminDisplay.js" afterPath="$PROJECT_DIR$/src/components/admin/AdminDisplay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/partner/PartnerForm.js" afterPath="$PROJECT_DIR$/src/components/admin/partner/PartnerForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/partner/PartnerList.js" afterPath="$PROJECT_DIR$/src/components/admin/partner/PartnerList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/card/Card.css" afterPath="$PROJECT_DIR$/src/components/card/Card.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/card/CardMedia.js" afterPath="$PROJECT_DIR$/src/components/card/CardMedia.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/card/CardQuote.js" afterPath="$PROJECT_DIR$/src/components/card/CardQuote.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/home/Home.css" afterPath="$PROJECT_DIR$/src/components/home/Home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/home/HomeContainer.js" afterPath="$PROJECT_DIR$/src/components/home/HomeContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/login/Login.js" afterPath="$PROJECT_DIR$/src/components/login/Login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/media/CardMediaForm.js" afterPath="$PROJECT_DIR$/src/components/admin/media/CardMediaForm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/quotes/CardQuoteForm.js" afterPath="$PROJECT_DIR$/src/components/admin/quotes/CardQuoteForm.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/media/MediaContainer.js" afterPath="$PROJECT_DIR$/src/components/media/MediaContainer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js" afterPath="$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -30,18 +23,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AdminDisplay.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/admin/AdminDisplay.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1142">
-              <caret line="158" column="29" lean-forward="false" selection-start-line="158" selection-start-column="29" selection-end-line="158" selection-end-column="29" />
-              <folding>
-                <element signature="e#486#523#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="PartnerList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/admin/partner/PartnerList.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,6 +42,18 @@
               <caret line="116" column="32" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
               <folding>
                 <element signature="e#95#155#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CardMedia.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/card/CardMedia.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,44 +91,48 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Btn.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/btn/Btn.js">
+      <file leaf-file-name="MediaDisplayDetail.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="34" column="16" lean-forward="true" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CardMediaForm.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/admin/media/CardMediaForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="81" column="44" lean-forward="false" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="44" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="firebase.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/firebase.js">
+      <file leaf-file-name="MediaContainer.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/media/MediaContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2482">
-              <caret line="146" column="8" lean-forward="false" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="-337">
+              <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+              <folding>
+                <element signature="e#332#380#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MediaDisplayDetail.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js">
+      <file leaf-file-name="CardQuoteForm.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/admin/quotes/CardQuoteForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="heroku.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/heroku.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3944">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="377">
+              <caret line="52" column="150" lean-forward="false" selection-start-line="52" selection-start-column="150" selection-end-line="52" selection-end-column="150" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -171,7 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/components/img/ImgContainer.js" />
         <option value="$PROJECT_DIR$/src/components/img/Img.css" />
         <option value="$PROJECT_DIR$/src/components/blog/Blog.css" />
         <option value="$PROJECT_DIR$/src/components/blog/BlogDetailDisplay.js" />
@@ -179,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/components/admin/CardMediaForm.js" />
         <option value="$PROJECT_DIR$/src/components/home/About.js" />
         <option value="$PROJECT_DIR$/src/components/blog/BlogDetail.js" />
-        <option value="$PROJECT_DIR$/src/components/media/MediaContainer.js" />
         <option value="$PROJECT_DIR$/src/components/media/Media.css" />
         <option value="$PROJECT_DIR$/src/components/admin/media/MediaList.js" />
         <option value="$PROJECT_DIR$/src/components/blog/BlogContainer.js" />
@@ -189,7 +184,6 @@
         <option value="$PROJECT_DIR$/src/components/partners/Partners.js" />
         <option value="$PROJECT_DIR$/src/components/partners/PartnersCrd.js" />
         <option value="$PROJECT_DIR$/src/components/partners/Text.js" />
-        <option value="$PROJECT_DIR$/src/components/admin/media/CardMediaForm.js" />
         <option value="$PROJECT_DIR$/src/services/firebase.js" />
         <option value="$PROJECT_DIR$/src/components/partners/PartnersCard.js" />
         <option value="$PROJECT_DIR$/src/routes.js" />
@@ -221,7 +215,10 @@
         <option value="$PROJECT_DIR$/src/components/admin/partner/PartnerForm.js" />
         <option value="$PROJECT_DIR$/src/components/admin/blog/PostList.js" />
         <option value="$PROJECT_DIR$/src/components/admin/partner/PartnerList.js" />
+        <option value="$PROJECT_DIR$/src/components/admin/quotes/CardQuoteForm.js" />
+        <option value="$PROJECT_DIR$/src/components/admin/media/CardMediaForm.js" />
         <option value="$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js" />
+        <option value="$PROJECT_DIR$/src/components/media/MediaContainer.js" />
       </list>
     </option>
   </component>
@@ -241,8 +238,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="42" />
-    <option name="y" value="66" />
+    <option name="x" value="40" />
+    <option name="y" value="23" />
     <option name="width" value="1240" />
     <option name="height" value="777" />
   </component>
@@ -599,32 +596,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="suki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="suki" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blog" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -748,15 +719,15 @@
       <workItem from="1531696274501" duration="6000" />
       <workItem from="1531696382064" duration="7000" />
       <workItem from="1531696416651" duration="26000" />
-      <workItem from="1531696455607" duration="4250000" />
+      <workItem from="1531696455607" duration="5619000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94208000" />
+    <option name="totallyTimeSpent" value="95577000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="42" y="66" width="1240" height="777" extended-state="0" />
+    <frame x="40" y="23" width="1240" height="777" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2483871" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -796,20 +767,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/login/Login.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="15" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="52" lean-forward="false" selection-start-line="11" selection-start-column="52" selection-end-line="11" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/admin/Admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -990,7 +947,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -999,24 +956,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1547">
           <caret line="91" column="35" lean-forward="false" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#41#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/media/MediaContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/card/CardMedia.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="90" lean-forward="false" selection-start-line="10" selection-start-column="90" selection-end-line="10" selection-end-column="90" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
@@ -1187,11 +1126,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/admin/quotes/CardQuoteForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="52" column="150" lean-forward="false" selection-start-line="52" selection-start-column="150" selection-end-line="52" selection-end-column="150" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/admin/media/CardMediaForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="81" column="44" lean-forward="false" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        <state relative-caret-position="68">
+          <caret line="34" column="16" lean-forward="true" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/card/CardMedia.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="7" lean-forward="true" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/media/MediaContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-337">
+          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <folding>
+            <element signature="e#332#380#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

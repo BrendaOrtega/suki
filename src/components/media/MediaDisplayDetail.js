@@ -17,8 +17,10 @@ export class MediaDisplayDetail extends React.Component{
         const id = this.props.match.params.id;
         getAlbum(id)
         .then(album=>{
-            this.setState({album})
             console.log(album)
+            this.setState({album})
+
+
         })
         .catch(e=>{
             console.log(e);
