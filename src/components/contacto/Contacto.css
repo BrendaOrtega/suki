@@ -59,3 +59,11 @@ input:focus, textarea:focus{
         display: none;
     }
 }
+
+.colored{
+    background:rgb(255,196,0);
+}
+
+.colored:active{
+    background:rgb(255,160,0);
+}

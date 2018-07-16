@@ -363,3 +363,24 @@ export const removePartner = (id)=>{
     })
     .catch(e=>e);
 };
+
+
+//contact mail for contact and sending mail
+export const sendContactMail = (form)=>{
+    return fetch(url + `contact/`, {
+        method: 'POST',
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(form)
+    })
+    .then(r=>{
+        if(!r.ok) {
+            return Promise.reject(r.json());
+        }
+        return r.json();
+    })
+    .then(item=>{
+        return item;
+    })
+};
