@@ -18,6 +18,7 @@ export class MediaDisplayDetail extends React.Component{
         getAlbum(id)
         .then(album=>{
             this.setState({album})
+            console.log(album)
         })
         .catch(e=>{
             console.log(e);

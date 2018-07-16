@@ -1,46 +1,73 @@
 import React, {Component} from 'react';
-import {getQuotes} from '../../../services/firebase';
+import {getPartners} from '../../../services/firebase';
 import toastr from 'toastr';
-import { List, Avatar } from 'antd';
-import Quote from './Quote';
+import { List, Avatar, Icon } from 'antd';
+import {Table} from 'antd';
+const { Column } = Table;
 
 export class PartnerList extends Component{
 
     state = {
-        quotes:[]
+        partners:[]
     }
 
     componentWillMount(){
         getPartners()
-            .then(quotes=>{
+            .then(partners=>{
                 this.setState({partners})
             })
             .catch(e=>{
-                toastr.error('no se pudo cargar la lista')
+                console.log(e)
+                toastr.error('no se pudo cargar ' + e)
             })
     }
-
     render(){
         const {partners} = this.state;
         return(
             <div className="box_contenido">
-                <h2>Quotes</h2>
-                <List
-                    itemLayout="horizontal"
-                    dataSource={partners}
-                    renderItem={partners => (
-                        <List.Item>
-                            <List.Item.Meta
-                                avatar={<Quote />}
-                                title={partners.name}
-                                description={partners.descript}
-                            />
-                        </List.Item>
-                    )}
-                />
-                {this.state.quotes.map(q=>{
-                    return <div>{q.text}</div>
-                })}
+                <h2>Partners</h2>
+                <Table  dataSource={partners} >
+
+                    <Column
+                        render={(text, record) => (
+                            <span>
+
+                                        </span>
+                        )}
+                    />
+                    <Column
+                        title= "Id del post"
+                        dataIndex="_id"
+                        key="_id"
+
+                    />
+                    <Column
+                        title= "Nombre del Cliente"
+                        dataIndex="name"
+                        key="name"
+
+                    />
+                    <Column
+                        title= "Lugar"
+                        dataIndex="place"
+                        key="place"
+
+                    />
+                    <Column
+                        title= "Eliminar"
+                        dataIndex="place"
+                        key="place"
+                        render= {()=>{ return <div style={{textAlign:"center", cursor:"pointer"}}><Icon type="delete" /></div> }}
+
+                    />
+
+
+
+
+
+                </Table>
+
+
             </div>
         );
     }

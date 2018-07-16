@@ -6,6 +6,7 @@ import {PartnersCard} from './PartnersCard';
 import toastr from 'toastr';
 import {getPartners} from '../../services/firebase';
 import {Spin} from 'antd';
+import Footer from '../footer/Footer';
 
 class PartnersContainer extends Component {
 
@@ -34,7 +35,7 @@ class PartnersContainer extends Component {
         return (
             <div >
                 <Slide />
-                <Nav />
+                <Nav/>
                 <div className="partners">
                     <h2>Clientes</h2>
                     <hr className="line_gris"/>
@@ -46,11 +47,12 @@ class PartnersContainer extends Component {
                         {partners.length ? null : <Spin />}
 
                         {partners.map(partner=>{
-                            return <dir><PartnersCard key={partner.key}  {...partner} id={partner.key} /></dir>
+                            return <div ><PartnersCard key={partner.key}  {...partner} id={partner.key} /></div>
                         })}
 
                     </div>
                 </div>
+                <Footer />
             </div>
         );
     }

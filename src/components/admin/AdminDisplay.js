@@ -14,6 +14,7 @@ import NewPost from './blog/NewPost';
 import PostList from './blog/PostList';
 import Footer from '../footer/Footer';
 import {PartnerForm} from '../admin/partner/PartnerForm';
+import {PartnerList} from '../admin/partner/PartnerList';
 
 const SubMenu = Menu.SubMenu;
 
@@ -21,6 +22,7 @@ const SubMenu = Menu.SubMenu;
 
 class AdminDisplay extends Component {
     state = {
+        isLogged: false,
         collapsed: false,
         openKeys:[]
     }
@@ -42,7 +44,14 @@ class AdminDisplay extends Component {
             collapsed: !this.state.collapsed,
         });
     }
-
+    componentWillMount(){
+        if(!localStorage.getItem('user')) this.props.history.push('/login');
+    }
+    logOut = () => {
+        localStorage.removeItem('user')
+        this.setState({isLogged:false})
+        this.props.history.push('/login')
+    }
 
     render() {
         const {openKeys} = this.state;
@@ -119,10 +128,15 @@ class AdminDisplay extends Component {
                             </Menu.Item>
                             <Menu.Item key="14">
                                 <Icon type="copy" /><span>Contenido</span>
-                                <Link to="/admin/videos">
+                                <Link to="/admin/partners">
                                 </Link>
                             </Menu.Item>
                         </SubMenu>
+                        <Menu.Item key="15" onClick={this.logOut}>
+                            <Icon type="pie-chart" /><span>Cerrar sesión</span>
+
+
+                        </Menu.Item>
 
                     </Menu>
 
@@ -142,6 +156,8 @@ class AdminDisplay extends Component {
                 <Route path="/admin/videos/new" component={CardVideoForm} />
 
                 <Route path="/admin/partners/new" component={PartnerForm}/>
+                <Route exact path="/admin/partners" component={PartnerList} />
+
                 <Route exact path="/admin" component={AdminHome} />
             </div>
         );

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Footer from '../footer/Footer';
 import {ContactoDisplay} from './ContactoDisplay';
 
 
@@ -12,6 +13,7 @@ class Contacto extends Component {
         return (
             <div id="contacto" >
                 <ContactoDisplay />
+                <Footer />
             </div>
         );
     }
