@@ -9,7 +9,7 @@ import {
   OrderedListButton,
   HeadlineThreeButton
 } from 'draft-js-buttons';
-import CameraButton, {zavalaTest} from './CameraButton';
+import CameraButton from './CameraButton';
 
 import BlockTypeSelect from 'draft-js-side-toolbar-plugin/lib/components/BlockTypeSelect';
 

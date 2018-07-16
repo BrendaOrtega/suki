@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 class CardMedia extends Component {
 
     render() {
-        const {title, cover, id, pics} = this.props;
+        const {title, id, pics} = this.props;
 
         return (
             <div className="card-img imagen" style={{backgroundImage:`url('${pics[0]}')`}}>

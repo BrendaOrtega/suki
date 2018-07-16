@@ -5,15 +5,15 @@ import Slide from './Slide';
 import Nav from '../nav/Nav';
 import CardC from '../cv/CardC';
 import CardBlog from '../card/CardBlog';
-import CardImg from '../card/CardMedia';
+//import CardImg from '../card/CardMedia';
 import CardQuote from '../card/CardQuote';
 import CardMedia from '../card/CardMedia';
 import Footer from '../footer/Footer';
-import BlogContainer from '../blog/BlogContainer';
+//import BlogContainer from '../blog/BlogContainer';
 import {getPublic, getQuotes, getAlbums} from '../../services/heroku';
 import toastr from 'toastr';
-import { SSL_OP_PKCS1_CHECK_1 } from 'constants';
-import CardCv from '../cv/CardC';
+//import { SSL_OP_PKCS1_CHECK_1 } from 'constants';
+//import CardCv from '../cv/CardC';
 
 class HomeContainer extends Component {
 
@@ -35,7 +35,7 @@ class HomeContainer extends Component {
     }
 
     makeItShuffle = (list1, list2, list3=[]) => {
-        const final = [];
+       // const final = [];
             const total = list1.length + list2.length + list3.length ;
             const conc = [...list1, ...list2, ...list3]
             for(let i=0; i< total; i++){
@@ -66,7 +66,7 @@ class HomeContainer extends Component {
     };
 
     getQuotes = () => {
-        let {items} = this.state;
+       // let {items} = this.state;
         return getQuotes(true)
         .then(its=>{
             console.log(its);
@@ -84,7 +84,7 @@ class HomeContainer extends Component {
     };
 
     getPosts = () =>{
-        let {items} = this.state;
+        //let {items} = this.state;
         return getPublic('BLOG_POST', true)
         .then(posts=>{
             const list = [];

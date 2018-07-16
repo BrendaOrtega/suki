@@ -1,6 +1,6 @@
 import React from 'react';
 import './Partners.css';
-import { Tooltip } from 'antd';
+//import { Tooltip } from 'antd';
 import partner from '../../assets/partners/elrealito.png'
 
 export const PartnersCard = ({name, place, cliente,  descript}) => (

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 //import {getPosts} from '../../../services/firebase';
 import {getPosts, savePost} from '../../../services/heroku';
 import toastr from 'toastr';
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
 import {Table, Switch, Select} from 'antd';
 const Option = Select.Option;
 

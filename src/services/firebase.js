@@ -203,7 +203,7 @@ export function getAlbum(id){
     return mediaRef.child(id).once("value")
       .then(snap=>{
         const ob = snap.val();
-        const list = [];
+        //const list = [];
         ob['key'] = snap.key;
         return ob;
       })

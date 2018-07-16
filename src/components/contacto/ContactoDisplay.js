@@ -2,7 +2,7 @@ import React from 'react';
 import './Contacto.css';
 import Nav from '../nav/Nav';
 import Boton from '../btn/Btn';
-import Footer from '../footer/Footer'
+//import Footer from '../footer/Footer'
 export const ContactoDisplay = () => {
 
     return (

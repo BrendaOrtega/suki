@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Icon, Input, Button } from 'antd';
+import { Form, Icon, Input } from 'antd';
 const FormItem = Form.Item;
 
 export const LoginDisplay = ({mostrar, toggleMostrar, saveInput, onSubmit, error, changeRegistro}) => (

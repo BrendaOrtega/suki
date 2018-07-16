@@ -11,12 +11,12 @@ import Nav from '../nav/Nav';
 import createImagePlugin from 'draft-js-image-plugin';
 import createAlignmentPlugin from 'draft-js-alignment-plugin';
 import createResizeablePlugin from 'draft-js-resizeable-plugin';
-import createFocusPlugin from 'draft-js-focus-plugin';
+//import createFocusPlugin from 'draft-js-focus-plugin';
 import 'draft-js-image-plugin/lib/plugin.css';
 import 'draft-js-focus-plugin/lib/plugin.css';
 import 'draft-js-alignment-plugin/lib/plugin.css';
 
-const focusPlugin = createFocusPlugin();
+//const focusPlugin = createFocusPlugin();
 const resizeablePlugin = createResizeablePlugin();
 const alignmentPlugin = createAlignmentPlugin();
 

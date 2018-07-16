@@ -1,8 +1,8 @@
 import React from 'react';
-import { Form, Icon, Input, Button, Tooltip } from 'antd';
+import { Form, Icon, Input, Tooltip } from 'antd';
 const FormItem = Form.Item;
 
-export const CardBlogForm = ({}) => (
+export const CardBlogForm = () => (
 
     <div className="formu">
         <Form >

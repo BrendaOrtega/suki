@@ -1,6 +1,6 @@
 import React from 'react';
 import createInlineStyleButton from 'draft-js-buttons/lib/utils/createInlineStyleButton';
-import FaBeer from 'react-icons/lib/fa/beer';
+//import FaBeer from 'react-icons/lib/fa/beer';
 import Cam from 'react-icons/lib/fa/camera-retro'
 import createBlockImageButton from './createBlockImageButton';
 

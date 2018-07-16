@@ -323,4 +323,6 @@ input:focus, textarea:active{
     border-color:rgb(255,196,0) !important;
 }
 
-
+.preview img{
+    width: 200px;
+}
