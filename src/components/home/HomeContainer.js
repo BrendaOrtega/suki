@@ -4,10 +4,10 @@ import {Link} from 'react-router-dom';
 import Slide from './Slide';
 import Nav from '../nav/Nav';
 import CardC from '../cv/CardC';
-import CardBlog from '../card/CardImg';
+import CardBlog from '../card/CardBlog';
 import CardImg from '../card/CardMedia';
 import CardQuote from '../card/CardQuote';
-import CardMedia from '../card/CardBlog';
+import CardMedia from '../card/CardMedia';
 import Footer from '../footer/Footer';
 import BlogContainer from '../blog/BlogContainer';
 import {getPublic, getQuotes, getAlbums} from '../../services/heroku';
@@ -54,7 +54,7 @@ class HomeContainer extends Component {
             console.log(its);
             const list = [];
             for(let item of its){
-                list.push(<CardBlog key={item._id} {...item} />);
+                list.push(<CardMedia key={item._id} {...item} />);
             }
             return list;
         })
@@ -89,7 +89,7 @@ class HomeContainer extends Component {
         .then(posts=>{
             const list = [];
             for(let post of posts){
-                list.push(<CardMedia key={post._id} {...post} />);
+                list.push(<CardBlog key={post._id} {...post} />);
             }
             return list;
         })
@@ -112,11 +112,13 @@ class HomeContainer extends Component {
                     <Link to="about">
                         <CardC />
                     </Link>
-                   
-                    {items.map(item=>{
-                        return item;
-                    })}
-                    
+                    <div >
+                       <div className="cards">
+                           {items.map(item=>{     return item; })}
+
+                       </div>
+                    </div>
+
                 </div>
 
             <Footer />

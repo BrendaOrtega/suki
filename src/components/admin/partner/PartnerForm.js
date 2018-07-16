@@ -52,7 +52,7 @@ export class PartnerForm extends React.Component{
             <div className="box_post">
                 <h2>Partners</h2>
                 <hr className="line"/>
-                <Form >
+                <form onSubmit={this.onSave} validated>
                     <FormItem
                         label={(
                             <span>
@@ -62,7 +62,7 @@ export class PartnerForm extends React.Component{
                               </Tooltip>
                             </span>
                         )}>
-                        <input onChange={this.onChange} value={partner.name} name="name" className="inp_t" type="text" placeholder="Nombre del proyecto" required=""/>
+                        <input onChange={this.onChange} value={partner.name} name="name" className="inp_t" type="text" placeholder="Nombre del proyecto" required/>
                     </FormItem>
                     <FormItem
                         label={(
@@ -73,7 +73,7 @@ export class PartnerForm extends React.Component{
                               </Tooltip>
                             </span>
                         )}>
-                        <input onChange={this.onChange} value={partner.cliente} name="cliente" className="inp_t" type="text" placeholder="Nombre del cliente" required=""/>
+                        <input onChange={this.onChange} value={partner.cliente} name="cliente" className="inp_t" type="text" placeholder="Nombre del cliente" required/>
                     </FormItem>
                     <FormItem
                         label={(
@@ -84,7 +84,7 @@ export class PartnerForm extends React.Component{
                               </Tooltip>
                             </span>
                         )}>
-                        <input className="inp_t" onChange={this.onChange}  value={partner.place} name="place" type="text" placeholder="Lugar" required=""/>
+                        <input className="inp_t" onChange={this.onChange}  value={partner.place} name="place" type="text" placeholder="Lugar" required/>
                     </FormItem>
 
                     <FormItem
@@ -96,7 +96,7 @@ export class PartnerForm extends React.Component{
                               </Tooltip>
                             </span>
                         )}>
-                        <textarea onChange={this.onChange} name="descript" className="inp_t" type="text" placeholder="Descripción del proyecto" required=""></textarea>
+                        <textarea onChange={this.onChange} value={partner.descript} name="descript" className="inp_t" type="text" placeholder="Descripción del proyecto" required></textarea>
                     </FormItem>
                     <FormItem
                         label={(
@@ -118,13 +118,13 @@ export class PartnerForm extends React.Component{
                         </div>
 
                     </FormItem>
-                </Form>
-                <input accept="image/*"  ref={inp => this.input = inp} type="file" hidden/>
+                    <input accept="image/*"  ref={inp => this.input = inp} type="file" hidden/>
 
-                <Btn
-                    text="Guardar"
-                    onClick={this.onSave}
-                />
+                    <Btn type="submit"
+                         text="Guardar"
+                    />
+                </form>
+
 
 
             </div>

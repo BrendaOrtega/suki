@@ -5,13 +5,13 @@ import {Link} from 'react-router-dom';
 class CardMedia extends Component {
 
     render() {
-        const {title, cover, id} = this.props;
+        const {title, cover, id, pics} = this.props;
 
         return (
-            <div className="card-img imagen" style={cover && {backgroundImage:`url('${cover}')`}}>
+            <div className="card-img imagen" style={{backgroundImage:`url('${pics[0]}')`}}>
                <Link to={`/media/detail/${id}`}>
                 <div className="cover_color">
-                    <p>{ title || "Sonora"}</p>
+                    <p>{ title || "Albúm"}</p>
                 </div>
                 </Link>
 

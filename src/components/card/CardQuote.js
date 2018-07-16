@@ -9,9 +9,11 @@ class CardQuote extends Component {
         const {body, author} = this.props;
         return (
             <div className="card-quote">
-                <FontAwesome name="bomb" />
-                <div className="fl">
-                    <p>{body}</p> {author && <p>-- {author}</p>}
+                 <div className="fl"><div>
+                    <FontAwesome name="bomb" />
+                    <br/>
+                        <p>{body}</p> {author && <p>-- {author}</p>}
+                    </div>
                 </div>
             </div>
         );

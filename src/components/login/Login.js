@@ -6,11 +6,22 @@ import firebase from '../../services/firebase';
 class LoginContainer extends Component {
     state = {
         mostrar: false,
+        isLogged:false,
         login: {
             email: null,
             password: null
         }
     };
+    componentWillMount() {
+        let user = localStorage.getItem("user");
+        if (user) {
+            //this.setState({isLogged:true, user})
+            this.props.history.push('/admin')
+        }else{
+            this.setState({isLogged:false})
+        }
+    }
+
 
     toggleMostrar = () => {
         // let mostrar = this.state.mostrar;
@@ -38,6 +49,7 @@ class LoginContainer extends Component {
                 let user = JSON.stringify(usuario);
                 localStorage.setItem("user", user);
                 this.props.history.push("/admin");
+                this.setState({isLogged:true})
                 console.log(user)
             })
             .catch(e => console.log(e));

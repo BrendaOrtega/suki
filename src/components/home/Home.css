@@ -51,3 +51,10 @@ a{
     width:300px;
 
 }
+.cards{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    max-height: 100vh;
+}
