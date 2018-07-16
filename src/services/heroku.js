@@ -193,6 +193,18 @@ export const getAlbums = (important)=>{
     .catch(e=>e);
 };
 
+
+export const getAlbum = (id)=>{
+    return fetch(url + 'albums/' + id)
+    .then(r=>{
+        if(!r.ok) return Promise.reject(r.json());
+        return r.json();
+    })
+    .then(item=>{
+        return item;
+    });
+};
+
 //admin
 export const getAdminAlbums = (important)=>{
     return fetch(url + 'albums/admin?')
