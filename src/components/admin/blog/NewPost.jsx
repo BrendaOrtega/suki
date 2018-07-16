@@ -228,7 +228,7 @@ class NewPost extends Component{
                             <Select value={tipo || "BLOG_POST"} defaultValue="BLOG_POST" style={{ width: 120 }} onChange={this.changeType}>
                                     <Option value="BLOG_POST">Post</Option>
                                     <Option value="PROFESIONAL">Profesional</Option>
-                                    <Option value="PERSONAL" disabled>Personal</Option>
+                                    <Option value="PERSONAL">Personal</Option>
                                 </Select>
                         </h4>
    

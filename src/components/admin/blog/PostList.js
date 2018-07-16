@@ -146,7 +146,7 @@ export default class PostList extends Component{
                                 return (<Select value={tipo || "BLOG_POST"} defaultValue="BLOG_POST" style={{ width: 100 }} onChange={(tipo)=>this.changeType(tipo, record)}>
                                     <Option value="BLOG_POST">Post</Option>
                                     <Option value="PROFESIONAL">Profesional</Option>
-                                    <Option value="PERSONAL" disabled>Personal</Option>
+                                    <Option value="PERSONAL" >Personal</Option>
                                 </Select>)
                             }}
                         />
