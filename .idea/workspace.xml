@@ -2,46 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b441ec67-f9af-4b8a-86c4-ab18c15a7483" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/backend" afterPath="$PROJECT_DIR$/backend" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/Admin.css" afterPath="$PROJECT_DIR$/src/components/admin/Admin.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/AdminDisplay.js" afterPath="$PROJECT_DIR$/src/components/admin/AdminDisplay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/AdminHome.js" afterPath="$PROJECT_DIR$/src/components/admin/AdminHome.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/CardBlogForm.js" afterPath="$PROJECT_DIR$/src/components/admin/CardBlogForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/blog/CameraButton.js" afterPath="$PROJECT_DIR$/src/components/admin/blog/CameraButton.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/blog/EditPost.js" afterPath="$PROJECT_DIR$/src/components/admin/blog/EditPost.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/blog/NewPost.jsx" afterPath="$PROJECT_DIR$/src/components/admin/blog/NewPost.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/blog/PostForm.jsx" afterPath="$PROJECT_DIR$/src/components/admin/blog/PostForm.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/blog/PostList.js" afterPath="$PROJECT_DIR$/src/components/admin/blog/PostList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/blog/SideBarStructure.js" afterPath="$PROJECT_DIR$/src/components/admin/blog/SideBarStructure.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/blog/createBlockImageButton.js" afterPath="$PROJECT_DIR$/src/components/admin/blog/createBlockImageButton.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/media/CardMediaForm.js" afterPath="$PROJECT_DIR$/src/components/admin/media/CardMediaForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/partner/PartnerForm.js" afterPath="$PROJECT_DIR$/src/components/admin/partner/PartnerForm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/partner/PartnerList.js" afterPath="$PROJECT_DIR$/src/components/admin/partner/PartnerList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/admin/quotes/CardQuoteList.js" afterPath="$PROJECT_DIR$/src/components/admin/quotes/CardQuoteList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/blog/BlogContainer.js" afterPath="$PROJECT_DIR$/src/components/blog/BlogContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/blog/BlogDetail.js" afterPath="$PROJECT_DIR$/src/components/blog/BlogDetail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/card/CardBlog.js" afterPath="$PROJECT_DIR$/src/components/card/CardBlog.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/card/CardMedia.js" afterPath="$PROJECT_DIR$/src/components/card/CardMedia.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/card/CardQuote.js" afterPath="$PROJECT_DIR$/src/components/card/CardQuote.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/contacto/Contacto.css" afterPath="$PROJECT_DIR$/src/components/contacto/Contacto.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/contacto/Contacto.js" afterPath="$PROJECT_DIR$/src/components/contacto/Contacto.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/contacto/ContactoDisplay.js" afterPath="$PROJECT_DIR$/src/components/contacto/ContactoDisplay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/home/HomeContainer.js" afterPath="$PROJECT_DIR$/src/components/home/HomeContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/login/LoginDisplay.js" afterPath="$PROJECT_DIR$/src/components/login/LoginDisplay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/media/Media.css" afterPath="$PROJECT_DIR$/src/components/media/Media.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/media/MediaContainer.js" afterPath="$PROJECT_DIR$/src/components/media/MediaContainer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js" afterPath="$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/partners/PartnersCard.js" afterPath="$PROJECT_DIR$/src/components/partners/PartnersCard.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/partners/PartnersContainer.js" afterPath="$PROJECT_DIR$/src/components/partners/PartnersContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/proyectos/ProyectosPersonales.js" afterPath="$PROJECT_DIR$/src/components/proyectos/ProyectosPersonales.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/proyectos/ProyectosProfesionales.js" afterPath="$PROJECT_DIR$/src/components/proyectos/ProyectosProfesionales.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes.js" afterPath="$PROJECT_DIR$/src/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/firebase.js" afterPath="$PROJECT_DIR$/src/services/firebase.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/heroku.js" afterPath="$PROJECT_DIR$/src/services/heroku.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -156,8 +117,8 @@
       <file leaf-file-name="MediaDisplayDetail.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-303">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="428">
+              <caret line="91" column="2" lean-forward="false" selection-start-line="91" selection-start-column="2" selection-end-line="91" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -791,12 +752,12 @@
       <workItem from="1531696416651" duration="26000" />
       <workItem from="1531696455607" duration="5619000" />
       <workItem from="1531760325832" duration="168000" />
-      <workItem from="1531803999051" duration="65000" />
+      <workItem from="1531803999051" duration="435000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95810000" />
+    <option name="totallyTimeSpent" value="96180000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="40" y="23" width="1240" height="777" extended-state="6" />
@@ -1211,8 +1172,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/media/MediaDisplayDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-303">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="428">
+          <caret line="91" column="2" lean-forward="false" selection-start-line="91" selection-start-column="2" selection-end-line="91" selection-end-column="2" />
           <folding />
         </state>
       </provider>
