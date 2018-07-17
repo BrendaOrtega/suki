@@ -5,7 +5,7 @@ import FontAwesome from 'react-fontawesome';
 import {Switch} from 'antd';
 
 import toastr from 'toastr';
-import { List, Avatar } from 'antd';
+import { List } from 'antd';
 import Quote from './Quote';
 
 

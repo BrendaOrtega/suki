@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
-import {getPartners} from '../../../services/firebase';
+import {getAdminPartners, removePartner} from '../../../services/heroku';
 import toastr from 'toastr';
-import { List, Avatar, Icon } from 'antd';
+import { Icon } from 'antd';
 import {Table} from 'antd';
+//import LightBox from 'react-images';
 const { Column } = Table;
+const preview = "https://library.lmc.nsw.gov.au/montage/images/no_image_w_large.gif"
 
 export class PartnerList extends Component{
 
@@ -12,7 +14,7 @@ export class PartnerList extends Component{
     }
 
     componentWillMount(){
-        getPartners()
+        getAdminPartners()
             .then(partners=>{
                 this.setState({partners})
             })
@@ -21,24 +23,34 @@ export class PartnerList extends Component{
                 toastr.error('no se pudo cargar ' + e)
             })
     }
+
+    removePartner = (partner) =>{
+        if(!window.confirm('Seguro que deceas borrar a ' + partner.name + '??')) return;
+        removePartner(partner._id)
+        .then(p=>{
+            let {partners} = this.state;
+            partners = partners.filter(pa=>pa._id!==p._id)
+            this.setState({partners});
+            toastr.warning('Se ha borrado el partner')
+        })
+        .catch(e=>{
+            toastr.error('No se pudo borrar')
+        })
+    }
+
     render(){
         const {partners} = this.state;
         return(
             <div className="box_contenido">
                 <h2>Partners</h2>
-                <Table  dataSource={partners} >
+                {/* Es importante el rowKey */}
+                <Table rowKey="_id"  dataSource={partners} > 
 
                     <Column
-                        render={(text, record) => (
-                            <span>
-
-                                        </span>
-                        )}
-                    />
-                    <Column
-                        title= "Id del post"
-                        dataIndex="_id"
-                        key="_id"
+                        title= "Imagen"
+                        dataIndex="picture"
+                        key="picture"
+                        render={(data)=><img alt={data} width="50" src={data || preview} />}
 
                     />
                     <Column
@@ -55,9 +67,9 @@ export class PartnerList extends Component{
                     />
                     <Column
                         title= "Eliminar"
-                        dataIndex="place"
-                        key="place"
-                        render= {()=>{ return <div style={{textAlign:"center", cursor:"pointer"}}><Icon type="delete" /></div> }}
+                        dataIndex="_id"
+                        key="_id"
+                        render= {(data,record)=>{ return <div style={{textAlign:"center", cursor:"pointer"}}><Icon onClick={()=>this.removePartner(record)} type="delete" /></div> }}
 
                     />
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {PostForm} from './PostForm';
 import { createEditorStateWithText } from 'draft-js-plugins-editor';
-import {EditorState} from 'draft-js';
+//import {EditorState} from 'draft-js';
 import {convertToRaw} from 'draft-js';
 
 

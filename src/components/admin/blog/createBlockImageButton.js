@@ -5,7 +5,7 @@ import unionClassNames from 'union-class-names';
 
 
 import {
-    EditorState,
+    //EditorState,
     AtomicBlockUtils,
   } from 'draft-js';
 

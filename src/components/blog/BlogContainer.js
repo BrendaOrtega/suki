@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Blog.css';
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
 import Slide from '../home/Slide';
 import Nav from '../nav/Nav';
 import CardBlog from '../card/CardBlog';
@@ -46,9 +46,9 @@ class BlogContainer extends Component {
                     {this.state.posts.length ? null : <Spin />}
 
 
-                    {this.state.posts.map(post=>{
-                        return <CardBlog key={post._id} {...post} />
-                    })}
+                    {this.state.posts.map(((post,i)=>{
+                        return <CardBlog key={i} {...post} />
+                    }))}
 
                 </div>
 

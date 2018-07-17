@@ -3,18 +3,18 @@ import Btn from '../../btn/Btn';
 import { Form, Icon, Tooltip } from 'antd';
 import firebase from '../../../services/firebase';
 import toastr from 'toastr';
-import { Spin, Alert } from 'antd';
-import {storage} from '../../../services/firebase';
+import { Spin } from 'antd';
+//import {storage} from '../../../services/firebase';
 import {saveAlbum} from '../../../services/heroku';
 
 import { DatePicker } from 'antd';
 
 const clear = {title:'', place:'', desc:'', pics:[]};
 const FormItem = Form.Item;
-const { MonthPicker, RangePicker, WeekPicker } = DatePicker;
-function onChange(date, dateString) {
-    console.log(date, dateString);
-}
+const { MonthPicker } = DatePicker;
+// function onChange(date, dateString) {
+//     console.log(date, dateString);
+// }
 
 
 
@@ -52,7 +52,7 @@ class CardMediaForm extends Component{
         let im = new Image();
         im.src = urlPic;
         div.appendChild(im);
-        div.className = 'bliss';
+        div.className = 'preview';
         this.preview.appendChild(div);
 
     };
@@ -201,7 +201,7 @@ class CardMediaForm extends Component{
                 </Form>
                 <div>
                     <p>Preview</p>
-                    <div className="prev" ref={div=>this.preview=div}>
+                    <div ref={div=>this.preview=div}>
                     </div>
                 </div>
                 <input accept="image/*" multiple onChange={this.getFile} ref={inp => this.input = inp} type="file" hidden/>

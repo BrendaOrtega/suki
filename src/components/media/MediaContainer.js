@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Media.css';
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
 import Slide from '../home/Slide';
 import Nav from '../nav/Nav';
 import CardMedia from '../card/CardMedia';
@@ -25,11 +25,11 @@ class BlogContainer extends Component {
     componentWillMount(){
         getAlbums()
         .then(albums=>{
-            console.log(albums);
+            //console.log(albums);
             this.setState({albums});
         })
         .catch(e=>{
-            console.log(e);
+            //console.log(e);
             toastr.error('no se pudieron cargar')
         })
     }
@@ -47,8 +47,8 @@ class BlogContainer extends Component {
 
                     {albums.length ? null : <Spin />}
 
-                    {albums.map(album=>{
-                        return <dir><CardMedia key={album.key} cover={album.pics[0]} {...album} id={album._id} /></dir>
+                    {albums.map((album,i)=>{
+                        return <dir><CardMedia key={i} cover={album.pics[0]} {...album} id={album._id} /></dir>
                     })}
                     
 

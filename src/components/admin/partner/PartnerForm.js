@@ -1,8 +1,13 @@
 import React from 'react';
 import Btn from '../../btn/Btn';
-import { Form, Icon, Tooltip, Input } from 'antd';
-import {savePartner} from '../../../services/firebase';
+import { Form, Icon, Tooltip } from 'antd';
+import firebase from '../../../services/firebase';
+import {savePartner} from '../../../services/heroku';
 import toastr from 'toastr';
+import Lightbox  from "react-images";
+
+
+const original = {name:'', cliente:'', descript:'', place:''}
 
 const FormItem = Form.Item;
 
@@ -10,10 +15,63 @@ const FormItem = Form.Item;
 export class PartnerForm extends React.Component{
 
     state = {
-        file: null,
-        partner:{}
-
+        files: [],
+        partner:{},
+        images:[],
+        isOpen: false,
+        currentImage:0
     }
+
+    toggleLightBox = () => this.setState({isOpen:!this.state.isOpen})
+	gotoPrevious = () => {
+		this.setState({
+			currentImage: this.state.currentImage - 1,
+		});
+	}
+	gotoNext = () => {
+		this.setState({
+			currentImage: this.state.currentImage + 1,
+		});
+	}
+
+    makeImgPreview = (urlPic) => {
+        const div = document.createElement('div')
+        let im = new Image();
+        im.src = urlPic;
+        div.appendChild(im);
+        div.className = 'preview';
+        this.preview.appendChild(div);
+
+        //lightbox
+        const light = {
+            src:urlPic
+        }
+        let {images} = this.state;
+        images = [];
+        images.push(light);
+        console.log(images)
+        this.setState({images})
+
+
+    };
+
+    uploadFiles = (e) => {
+        this.setState({loading:true})
+        const {files} = this.state;
+        const promises = [];
+        for(let file of files){
+            promises.push(firebase.storage()
+            .ref('media')
+            .child(file.name)
+            .put(file)
+            .then(snap=>{
+                return snap.downloadURL
+            })
+        );
+        }
+        return Promise.all(promises);
+
+    };
 
     onChange = (e) => {
         const field = e.target.name;
@@ -25,22 +83,40 @@ export class PartnerForm extends React.Component{
 
 
     getFile = (e) => {
+        this.preview.innerHTML = '';
+        this.setState({files:e.target.files});
+        for(let pic of e.target.files){
+            const reader = new FileReader();
+            reader.readAsDataURL(pic);
+            reader.onload = (e) => {
+                this.makeImgPreview(e.target.result);
+            };
+        }
 
-    }
+    };
 
-        onSave = () => {
-        savePartner(this.state.partner)
-            .then(r=>{
-                toastr.success('Tu información se guardo');
-                this.setState({partner:{}})
+    onSave = (e) => {
+        e.preventDefault();
+        //subes archivo
+        this.uploadFiles()
+        .then(links=>{
+            const {partner} = this.state;
+            partner.picture = links[0];
+            return savePartner(partner)
 
-                console.log(r)
+        })
+        .then(partner=>{
+            this.setState({partner:{}});
+            toastr.success('Tu partner se ha guardado =D')
+            this.setState({partner:original})
+        })
+        .catch(e=>{
+            toastr.error('Algo falló, intenta mas tarde')
+        })
 
-            })
-            .catch(e=>{
-                toastr.success('Algo falló al guardar')
-                console.log(e)
-            });
+
+
+
     };
 
 
@@ -118,14 +194,29 @@ export class PartnerForm extends React.Component{
                         </div>
 
                     </FormItem>
-                    <input accept="image/*"  ref={inp => this.input = inp} type="file" hidden/>
+                    <div>
+                        <p>Preview</p>
+                        <div id="papa" onClick={this.toggleLightBox} ref={div=>this.preview=div} >
 
+                        </div>
+                    </div>
+
+                    <input ref={input=>this.input=input} onChange={this.getFile} accept="image/*" type="file" hidden/>
+                    
                     <Btn type="submit"
                          text="Guardar"
                     />
                 </form>
 
 
+                        <Lightbox
+                            currentImage={this.state.currentImage}
+                            images={this.state.images}
+                            isOpen={this.state.isOpen}
+                            onClose={this.toggleLightBox}
+                            onClickPrev={this.gotoPrevious}
+                            onClickNext={this.gotoNext}
+                        />
 
             </div>
         );

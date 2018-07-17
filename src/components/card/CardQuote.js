@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Card.css';
 import FontAwesome from 'react-fontawesome';
-import { spawn } from 'child_process';
+//import { spawn } from 'child_process';
 
 class CardQuote extends Component {
 

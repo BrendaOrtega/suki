@@ -1,6 +1,6 @@
 import React from 'react';
-import {convertToRaw, convertFromRaw, EditorState} from 'draft-js';
-import Editor, {createEditorStateWithText, composeDecorators } from 'draft-js-plugins-editor';
+//import {convertToRaw, convertFromRaw, EditorState} from 'draft-js';
+import Editor, {composeDecorators } from 'draft-js-plugins-editor';
 import createHashtagPlugin from 'draft-js-hashtag-plugin';
 import 'draft-js-hashtag-plugin/lib/plugin.css';
 import 'draft-js-inline-toolbar-plugin/lib/plugin.css';
@@ -14,7 +14,7 @@ import './editorStyles.css';
 
 
 import createInlineToolbarPlugin from 'draft-js-inline-toolbar-plugin';
-import createSideToolbarPlugin, {TooltipTrigger} from 'draft-js-side-toolbar-plugin';
+import createSideToolbarPlugin from 'draft-js-side-toolbar-plugin';
 import createImagePlugin from 'draft-js-image-plugin';
 import createAlignmentPlugin from 'draft-js-alignment-plugin';
 import createResizeablePlugin from 'draft-js-resizeable-plugin';
@@ -38,14 +38,14 @@ import {
     OrderedListButton,
     BlockquoteButton,
     CodeBlockButton,
-    AlignBlockDefaultButton,
-    AlignBlockCenterButton,
-    AlignBlockLeftButton,
-    AlignBlockRightButton
+    //AlignBlockDefaultButton,
+    //AlignBlockCenterButton,
+    //AlignBlockLeftButton,
+    //AlignBlockRightButton
   } from 'draft-js-buttons';
-  import CameraButton, {zavalaTest} from './CameraButton';
+  //import CameraButton, {zavalaTest} from './CameraButton';
   import SideBarStructure from './SideBarStructure';
-  import ImageAdd from './AddImage'; 
+  //import ImageAdd from './AddImage'; 
 
 
 

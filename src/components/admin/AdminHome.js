@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-export const AdminHome = ({}) => (
+export const AdminHome = () => (
     <section className="admin flexi">
         <div >
             <h2>Bienvenido</h2>

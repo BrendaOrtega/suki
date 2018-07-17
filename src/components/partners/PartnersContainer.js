@@ -4,7 +4,7 @@ import Slide from '../home/Slide';
 import Nav from '../nav/Nav';
 import {PartnersCard} from './PartnersCard';
 import toastr from 'toastr';
-import {getPartners} from '../../services/firebase';
+import {getPartners} from '../../services/heroku';
 import {Spin} from 'antd';
 import Footer from '../footer/Footer';
 

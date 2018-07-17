@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 import toastr from 'toastr';
-import {Layout, Input, Menu, Button} from 'antd';
+import { Input, Menu, Button} from 'antd';
 import { Switch, Select } from 'antd';
 
 // import {LastForm} from './LastForm';
 import {PostForm} from './PostForm';
 import './editorStyles.css';
 //import {getPost, saveOrUpdatePost} from '../../../services/firebase';
-import { createEditorStateWithText, createWithContent } from 'draft-js-plugins-editor';
+import { createEditorStateWithText } from 'draft-js-plugins-editor';
 import {convertToRaw, convertFromRaw, EditorState} from 'draft-js';
 
 //heroku
 import {savePost, getPost} from '../../../services/heroku';
 const Option = Select.Option;
-const Header = Layout.Header;
+//const Header = Layout.Header;
 
 class NewPost extends Component{
 
@@ -221,7 +221,7 @@ class NewPost extends Component{
                     <div style={{display:'flex', paddingTop:60, justifyContent:'flex-end', alignItems:'center'}}>
                         <h4 style={{marginRight:20}}>
                             Publico 
-                            <Switch checked={status == "PUBLISHED"}  onChange={this.changePublic} />
+                            <Switch checked={status === "PUBLISHED"}  onChange={this.changePublic} />
                         </h4>
                         <h4>
                             Tipo

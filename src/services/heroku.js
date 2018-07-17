@@ -193,6 +193,18 @@ export const getAlbums = (important)=>{
     .catch(e=>e);
 };
 
+
+export const getAlbum = (id)=>{
+    return fetch(url + 'albums/' + id)
+    .then(r=>{
+        if(!r.ok) return Promise.reject(r.json());
+        return r.json();
+    })
+    .then(item=>{
+        return item;
+    });
+};
+
 //admin
 export const getAdminAlbums = (important)=>{
     return fetch(url + 'albums/admin?')
@@ -264,3 +276,111 @@ export const removeAlbum = (id)=>{
     .catch(e=>e);
 };
 
+
+//partners
+//public
+export const getPartners = (important)=>{
+    let query='';
+    if(important) query += `&important=${important}`
+    return fetch(url + 'partners/?' + query)
+    .then(r=>{
+        if(!r.ok) {
+            console.log("chet",r);
+            return Promise.reject(r.json());
+        }
+        return r.json();
+    })
+    .then(items=>{
+        return items;
+    })
+    .catch(e=>e);
+};
+
+//admin
+export const getAdminPartners = (important)=>{
+    return fetch(url + 'partners/admin?')
+    .then(r=>{
+        if(!r.ok) {
+            return Promise.reject(r.json());
+        }
+        return r.json();
+    })
+    .then(items=>{
+        return items;
+    })
+};
+
+export const savePartner = (item)=>{
+    if(item._id){
+        return fetch(url + 'partners/' + item._id, {
+            //mayusculas we!
+            method:'PATCH',
+            headers:{
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(item)
+        })
+        .then(r=>{
+            //console.log(r)
+            if(!r.ok) return Promise.reject(r);
+            return r.json();
+        })
+        .then(item=>{
+            return item;
+        });
+    }
+    return fetch(url + 'partners', {
+        method:'post',
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify(item)
+    })
+    .then(r=>{
+        if(!r.ok) return Promise.reject(r);
+        return r.json();
+    })
+    .then(item=>{
+        return item;
+    });
+}
+
+export const removePartner = (id)=>{
+    return fetch(url + `partners/${id}`, {
+        method: 'DELETE',
+        headers:{
+            "Content-Type": "application/json"
+        }
+    })
+    .then(r=>{
+        if(!r.ok) {
+            return Promise.reject(r.json());
+        }
+        return r.json();
+    })
+    .then(item=>{
+        return item;
+    })
+    .catch(e=>e);
+};
+
+
+//contact mail for contact and sending mail
+export const sendContactMail = (form)=>{
+    return fetch(url + `contact/`, {
+        method: 'POST',
+        headers:{
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(form)
+    })
+    .then(r=>{
+        if(!r.ok) {
+            return Promise.reject(r.json());
+        }
+        return r.json();
+    })
+    .then(item=>{
+        return item;
+    })
+};

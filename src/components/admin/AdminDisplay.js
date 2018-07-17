@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Admin.css';
-import { Menu, Icon, Button } from 'antd';
+import { Menu, Icon } from 'antd';
 import {Route, NavLink, Link} from 'react-router-dom';
 import {AdminHome} from './AdminHome';
 import {CardQuoteForm, CardQuoteList} from './quotes';
@@ -8,11 +8,11 @@ import CardVideoForm from './videos/CardVideoForm';
 import {VideoList} from './videos/VideoList';
 import CardMediaForm from './media/CardMediaForm';
 import {MediaList} from './media/MediaList';
-import Post from './Post';
+//import Post from './Post';
 //bliss:
 import NewPost from './blog/NewPost';
 import PostList from './blog/PostList';
-import Footer from '../footer/Footer';
+//import Footer from '../footer/Footer';
 import {PartnerForm} from '../admin/partner/PartnerForm';
 import {PartnerList} from '../admin/partner/PartnerList';
 
@@ -54,7 +54,7 @@ class AdminDisplay extends Component {
     }
 
     render() {
-        const {openKeys} = this.state;
+        //const {openKeys} = this.state;
         return (
             <div style={{display:'flex'}}>
                 <div style={{ width: 256}}>
