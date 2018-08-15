@@ -50,10 +50,11 @@ export class MediaDisplayDetail extends React.Component{
     }
 
     render(){
+        console.log(this.state.album)
         const {title, 
             desc,
             fecha,
-            pics, 
+            pics,
             place
         } = this.state.album;
         return (

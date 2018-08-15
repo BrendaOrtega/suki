@@ -10,8 +10,11 @@
 
 .part_card{
     width:200px;
-    height:auto;
+    height:120px;
     margin: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
 .tooltip {

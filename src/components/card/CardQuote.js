@@ -10,7 +10,7 @@ class CardQuote extends Component {
         return (
             <div className="card-quote">
                  <div className="fl"><div>
-                    <FontAwesome name="bomb" />
+                    <FontAwesome name="book" />
                     <br/>
                         <p>{body}</p> {author && <p>-- {author}</p>}
                     </div>

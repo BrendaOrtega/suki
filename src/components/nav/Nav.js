@@ -51,7 +51,7 @@ class Nav extends Component {
                         </Menu.Item>
                         <Menu.Item key="part" >
                             <Link to="/partner">
-                                <span>Partnership</span>
+                                <span>Clientes</span>
                             </Link>
                         </Menu.Item>
                     </SubMenu>
@@ -61,7 +61,7 @@ class Nav extends Component {
                         </Link>
                     </Menu.Item>
                     <Menu.Item key="face" >
-                        <a href="https://www.facebook.com/lasuki" target='blank'>
+                        <a href="https://www.facebook.com/lasukiarmendariz/" target='blank'>
                             <FontAwesome name="facebook-square" />
                         </a>
                     </Menu.Item>
