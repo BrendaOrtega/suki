@@ -8,6 +8,7 @@ import CardVideoForm from './videos/CardVideoForm';
 import {VideoList} from './videos/VideoList';
 import CardMediaForm from './media/CardMediaForm';
 import {MediaList} from './media/MediaList';
+import Portadas from './portadas/Portadas';
 //import Post from './Post';
 //bliss:
 import NewPost from './blog/NewPost';
@@ -66,13 +67,13 @@ class AdminDisplay extends Component {
 
                         inlineCollapsed={this.state.collapsed}
                     >
-                        <Menu.Item key="1">
+                        <Menu.Item key="1" style={{paddingRight: "40px"}}>
                             <Icon type="pie-chart" /><span>Inicio</span>
                             <NavLink to="/admin">
 
                             </NavLink>
                         </Menu.Item>
-                        <SubMenu key="sub1" title={<span><Icon type="file-text" /><span>Blog</span></span>}>
+                        <SubMenu key="sub1" style={{paddingRight: "20px"}} title={<span><Icon type="file-text" /><span>Blog</span></span>}>
                             <Menu.Item key="5">
                                 <Icon type="edit" /><span>Nuevo Post</span>
                                 <Link to="/admin/new-post">
@@ -132,11 +133,15 @@ class AdminDisplay extends Component {
                                 </Link>
                             </Menu.Item>
                         </SubMenu>
-                        <Menu.Item key="15" onClick={this.logOut}>
-                            <Icon type="pie-chart" /><span>Cerrar sesión</span>
-
-
+                        <Menu.Item key="15" >
+                            <Icon type="copy" /><span>Portadas</span>
+                            <Link to="/admin/portadas">
+                            </Link>
                         </Menu.Item>
+                        <Menu.Item key="16" onClick={this.logOut}>
+                            <Icon type="pie-chart" /><span>Cerrar sesión</span>
+                        </Menu.Item>
+
 
                     </Menu>
 
@@ -158,6 +163,7 @@ class AdminDisplay extends Component {
                 <Route path="/admin/partners/new" component={PartnerForm}/>
                 <Route exact path="/admin/partners" component={PartnerList} />
 
+                <Route path="/admin/portadas" component={Portadas}/>
                 <Route exact path="/admin" component={AdminHome} />
             </div>
         );

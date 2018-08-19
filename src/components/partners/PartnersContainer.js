@@ -22,7 +22,7 @@ class PartnersContainer extends Component {
         getPartners()
             .then(partners=>{
                 this.setState({partners})
-                console.log("partners")
+                console.log(partners)
             })
             .catch(e=>{
                 toastr.error('No se pudieron cargar los albums')
@@ -42,7 +42,7 @@ class PartnersContainer extends Component {
                     <p className="quote">
                         <br/>
                         </p>
-                    <div style={{width:"80%", margin:"50px auto", display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
+                    <div style={{width:"80%", margin:"0px auto", display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
 
                         {partners.length ? null : <Spin />}
 
