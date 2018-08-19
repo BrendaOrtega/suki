@@ -1,6 +1,7 @@
 
 //const url = 'https://obscure-cliffs-57166.herokuapp.com/';
-const url = 'https://suki-blog.herokuapp.com/';
+//const url = 'https://suki-blog.herokuapp.com/';
+const url = 'https://suki-blogs.herokuapp.com/';
 
 export const getPublic = (tipo, important)=>{
     let query='';
