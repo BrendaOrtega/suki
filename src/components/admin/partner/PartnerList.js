@@ -42,7 +42,7 @@ export class PartnerList extends Component{
         const {partners} = this.state;
         return(
             <div className="box_contenido">
-                <h2>Partners</h2>
+                <h2>Clientes</h2>
                 {/* Es importante el rowKey */}
                 <Table rowKey="_id"  dataSource={partners} > 
 

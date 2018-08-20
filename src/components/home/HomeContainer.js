@@ -14,16 +14,51 @@ import {getPublic, getQuotes, getAlbums} from '../../services/heroku';
 import toastr from 'toastr';
 //import { SSL_OP_PKCS1_CHECK_1 } from 'constants';
 //import CardCv from '../cv/CardC';
+import sr from './scrollReveal.js';
 
 class HomeContainer extends Component {
 
     state = {
         items:[]
     };
-
     componentDidMount () {
         window.scroll(0, 0)
-    }
+        const config = {
+            origin: 'right',
+            duration: 1000,
+            delay: 150,
+            distance: '100%',
+            scale: 1,
+            easing: 'ease',
+        }
+
+        const config2 = {
+            origin: 'left',
+            duration: 1000,
+            delay: 150,
+            distance: '100%',
+            scale: 1,
+            easing: 'ease',
+        }
+        const config3 = {
+            origin: 'bottom',
+            duration: 800,
+            delay: 100,
+            distance: '100%',
+            scale: 1,
+            easing: 'ease',
+        }
+
+        sr.reveal('.right', config2);
+        sr.reveal('.left', config);
+        sr.reveal('.bot', config3);
+
+
+
+
+
+    };
+
 
     componentWillMount(){
         Promise.all([this.getPosts(),this.getQuotes(),this.getAlbums()])
@@ -109,7 +144,7 @@ class HomeContainer extends Component {
                 <Slide />
                 <Nav />
                 <div style={{margin:"50px auto", width:"85%", display:"flex", flexWrap:"wrap" }}>
-                    <Link to="about">
+                    <Link to="about bot">
                         <CardC />
                     </Link>
                     <div >

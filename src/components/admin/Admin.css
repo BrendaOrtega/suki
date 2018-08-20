@@ -35,7 +35,7 @@
 .box_post{
     width:70%;
     margin: 0 auto;
-    padding-top: 70px;
+    padding: 70px 0 ;
 }
 
 /* BlisS */
@@ -132,7 +132,7 @@ pre > pre{
     text-align: center;
 }
 .box_img{
-    width:900px;
+
     height:50px;
     margin: 0 auto;
     border: 1px dashed #d9d9d9;
@@ -326,3 +326,20 @@ input:focus, textarea:active{
 .preview img{
     width: 200px;
 }
+.ant-menu-inline .ant-menu-submenu-title,.ant-menu-inline .ant-menu-item, .ant-menu-inline .ant-menu-submenu-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ant-menu-inline .ant-menu-item, .ant-menu-inline .ant-menu-submenu-title{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.ant-menu-inline{
+    width: 200px;
+}
+.ant-input-group.ant-input-group-compact > *:last-child, .ant-input-group.ant-input-group-compact > .ant-select:last-child > .ant-select-selection, .ant-input-group.ant-input-group-compact > .ant-calendar-picker:last-child .ant-input, .ant-input-group.ant-input-group-compact > .ant-select-auto-complete:last-child .ant-input, .ant-input-group.ant-input-group-compact > .ant-cascader-picker:last-child .ant-input, .ant-input-group.ant-input-group-compact > .ant-mention-wrapper:last-child .ant-mention-editor, .ant-input-group.ant-input-group-compact > .ant-time-picker:last-child .ant-time-picker-input{
+    width: 100%;
+}
+
