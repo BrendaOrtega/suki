@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import Btn from '../../btn/Btn';
 import { Form, Icon, Tooltip } from 'antd';
 import firebase from '../../../services/firebase';
-import {getCovers, saveCover,removeCover} from '../../../services/heroku'
+import {getCovers, saveCover} from '../../../services/heroku'
 import toastr from 'toastr';
 import { Spin } from 'antd';
-import { Input, Col, Select, InputNumber, DatePicker, AutoComplete, Cascader } from 'antd';
+import { Input, Select } from 'antd';
 
 const InputGroup = Input.Group;
 const Option = Select.Option;
 
-const clear = {title:'',  pics:[]};
 const FormItem = Form.Item;
 
 
@@ -115,7 +114,7 @@ class Portadas extends Component {
 
 
     render() {
-        const {cover,newPortada, loading, covers} = this.state;
+        const {cover, loading, covers} = this.state;
 
         return (
             <div className="box_post">

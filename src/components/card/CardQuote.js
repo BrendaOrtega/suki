@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Card.css';
 import FontAwesome from 'react-fontawesome';
 //import { spawn } from 'child_process';
-import sr from '../home/scrollReveal.js';
 
 class CardQuote extends Component {
 

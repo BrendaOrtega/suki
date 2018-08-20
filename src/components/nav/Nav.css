@@ -23,7 +23,7 @@
 .ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected{
     border-bottom:2px solid rgb(255,196,0) !important;
 }
-@media(max-width: 450px) {
+@media(max-width: 780px) {
 
     .flex{
         width:1000px;

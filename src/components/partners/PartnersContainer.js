@@ -35,7 +35,6 @@ class PartnersContainer extends Component {
         getPartners()
             .then(partners=>{
                 this.setState({partners})
-                console.log(partners)
             })
             .catch(e=>{
                 toastr.error('No se pudieron cargar los albums')
@@ -73,8 +72,8 @@ class PartnersContainer extends Component {
 
 const styles = {
     cards:{
-        width:"80%", 
-        margin:"50px auto", 
+        width:"90%",
+        margin:"0px auto 20px auto",
         display:"flex", 
         flexWrap:"wrap", 
         justifyContent:"center"

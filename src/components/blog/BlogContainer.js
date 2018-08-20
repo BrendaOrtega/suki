@@ -19,7 +19,6 @@ class BlogContainer extends Component {
     componentWillMount(){
         getPublic('BLOG_POST', this.props.important || false)
         .then(posts=>{
-            console.log(posts)
             this.setState({posts})
         })
         .catch(e=>{
@@ -33,7 +32,6 @@ class BlogContainer extends Component {
 
 
     render() {
-        console.log(this.state.posts)
         return (
             <div>
                 <Slide title="Blog" />
@@ -46,9 +44,9 @@ class BlogContainer extends Component {
                     {this.state.posts.length ? null : <Spin />}
 
 
-                    {this.state.posts.map(((post,i)=>{
+                    {this.state.posts.map((post,i)=>{
                         return <CardBlog key={i} {...post} />
-                    }))}
+                    })}
 
                 </div>
 

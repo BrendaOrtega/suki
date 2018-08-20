@@ -9,7 +9,6 @@ class Nav extends Component {
     state = {
     }
     handleClick = (e) => {
-        console.log('click ', e);
         this.setState({
             current: e.key,
         });
