@@ -85,7 +85,7 @@ class AdminDisplay extends Component {
                                 </Link>
                             </Menu.Item>
                         </SubMenu>
-                        <SubMenu key="sub2" title={<span><Icon type="team" /><span>Quotes</span></span>}>
+                        <SubMenu key="sub2" title={<span><Icon type="tags-o" /><span>Quotes</span></span>}>
                             <Menu.Item key="7">
                                 <Icon type="edit" /><span>Nueva Quote</span>
                                 <Link to="/admin/quote/new">
@@ -121,7 +121,7 @@ class AdminDisplay extends Component {
                                 </Link>
                             </Menu.Item>
                         </SubMenu>
-                        <SubMenu key="sub5" title={<span><Icon type="idcard" /><span>Partners</span></span>}>
+                        <SubMenu key="sub5" title={<span><Icon type="team" /><span>Clientes</span></span>}>
                             <Menu.Item key="13">
                                 <Icon type="edit" /><span>Nuevo Partner</span>
                                 <Link to="/admin/partners/new">
@@ -134,7 +134,7 @@ class AdminDisplay extends Component {
                             </Menu.Item>
                         </SubMenu>
                         <Menu.Item key="15" >
-                            <Icon type="copy" /><span>Portadas</span>
+                            <Icon type="solution" /><span>Portadas</span>
                             <Link to="/admin/portadas">
                             </Link>
                         </Menu.Item>

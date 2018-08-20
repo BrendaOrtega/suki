@@ -7,7 +7,7 @@ import toastr from 'toastr';
 import {getPartners} from '../../services/heroku';
 import {Spin} from 'antd';
 import Footer from '../footer/Footer';
-
+import sr from '../home/scrollReveal';
 class PartnersContainer extends Component {
 
     state = {
@@ -15,10 +15,23 @@ class PartnersContainer extends Component {
     }
 
     componentDidMount () {
-        window.scroll(0, 0);
-    }
+        window.scroll(0, 0)
 
-    componentWillMount(){
+        const config3 = {
+            origin: 'bottom',
+            duration: 800,
+            delay: 100,
+            distance: '100%',
+            scale: 1,
+            easing: 'ease',
+        }
+
+        sr.reveal('.bot', config3);
+
+
+
+
+
         getPartners()
             .then(partners=>{
                 this.setState({partners})
@@ -42,7 +55,7 @@ class PartnersContainer extends Component {
                     <p className="quote">
                         <br/>
                         </p>
-                    <div style={{width:"80%", margin:"0px auto", display:"flex", flexWrap:"wrap", justifyContent:"center"}}>
+                    <div style={{width:"80%", margin:"0px auto", display:"flex", flexWrap:"wrap", justifyContent:"center"}} className="bot">
 
                         {partners.length ? null : <Spin />}
 

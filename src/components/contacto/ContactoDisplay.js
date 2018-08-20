@@ -10,10 +10,10 @@ export const ContactoDisplay = ({onSubmit, onChange, nombre, email, tel, mensaje
             <Nav />
             <div className="contacto">
 
-                <div className="back_ctc">
+                <div className="back_ctc bot">
 
                 </div>
-                <div className="form_ctc">
+                <div className="form_ctc bot">
                     <h3>Contacto</h3>
                     <div>
                         <input onChange={onChange} name="nombre" value={nombre} type="text" placeholder="Nombre"/>

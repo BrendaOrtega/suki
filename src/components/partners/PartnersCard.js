@@ -7,8 +7,8 @@ export const PartnersCard = ({name, place, cliente,  descript, picture}) => (
 
 
 
-        <div className="tooltip">
-            <div className="part_card ">
+        <div className="tooltip ">
+            <div className="part_card  bot">
                 <div>
                 <div >
                 <img width="100" src={picture || partner} alt=""/></div>
@@ -20,5 +20,4 @@ export const PartnersCard = ({name, place, cliente,  descript, picture}) => (
                     <p>Trabajo: {descript}</p>
                 </div>
         </div>
-
 );

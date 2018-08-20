@@ -81,11 +81,12 @@ export class MediaDisplayDetail extends React.Component{
             </div>
 
         </div>
-        <div className="flexito">
+        <div className="flexito contenedor">
                 {pics.map((pic,i)=>{
                     return (
+                        <div>
                         <img onClick={()=>this.toggleLightBox(i)} key={i} className="images_al" src={pic} alt={title}/>
-                    );
+                        </div>);
                 })}
 
 

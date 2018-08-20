@@ -16,7 +16,7 @@ class Nav extends Component {
     }
     render() {
         return (
-            <div className="nav">
+            <div className="nav bot">
                 <div className="flex">
                 <Menu
                     onClick={this.handleClick}

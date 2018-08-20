@@ -47,10 +47,10 @@ class Portadas extends Component {
 
     };
 
-    onChange = (e) => {
+    onChange = (a,b) => {
         const {newPortada} = this.state;
-        newPortada.name = this.name.option.value;
-        this.setState({newPortada})
+        newPortada.name = a;
+        this.setState({newPortada});
     };
 
     savePortada = () => {
@@ -60,7 +60,6 @@ class Portadas extends Component {
                 newPortada.pics = links;
                 console.log(newPortada);
                 this.setState({newPortada:clear});
-                this.removePics();
             })
             .then(res=>{
                 this.setState({loading:false})
@@ -115,8 +114,8 @@ class Portadas extends Component {
                               </Tooltip>
                             </span>
                         )}>
-                    <InputGroup compact style={{width:"100%"}}>
-                        <Select defaultValue="Sección" >
+                    <InputGroup compact style={{width:"100%"}} >
+                        <Select defaultValue="Sección" onChange={this.onChange}>
                             <Option value="home">Home</Option>
                             <Option value="fotografia">Fotografía</Option>
                             <Option value="blog">Blog</Option>
@@ -155,6 +154,7 @@ class Portadas extends Component {
                     </div>
                 </div>
                 <input accept="image/*" multiple onChange={this.getFile} ref={inp => this.input = inp} type="file" hidden/>
+                <br/>
                 <Btn
                     text="Guardar"
                     onClick={this.savePortada}

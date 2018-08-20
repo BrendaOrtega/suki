@@ -7,7 +7,7 @@ class CardCv extends Component {
 
     render() {
         return (
-            <div className="cv">
+            <div className="cv ">
                 <div className="photo">
                     <img src={suki} alt=""/>
                 </div>

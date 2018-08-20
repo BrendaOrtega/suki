@@ -28,8 +28,18 @@
 
  }
 .images_al{
-    width:200px;
-    height:200px;
+
+    height:100%;
     margin: 20px;
     cursor: pointer;
+
 }
+.contenedor{
+    width: 80%;
+    margin: 0 auto;
+}
+.contenedor div{
+    height: 200px;
+    overflow: hidden;
+    width: 250px;
+flex-grow: 1;}
