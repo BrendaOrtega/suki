@@ -47,7 +47,7 @@ class PartnersContainer extends Component {
 
         return (
             <div >
-                <Slide />
+                <Slide title="Clientes" />
                 <Nav/>
                 <div className="partners">
                     <h2>Clientes</h2>

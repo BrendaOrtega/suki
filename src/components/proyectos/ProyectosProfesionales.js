@@ -34,7 +34,7 @@ class ProyectosProfesionales extends Component {
 
         return (
             <div>
-                <Slide />
+                <Slide title="Profesionales" />
                 <Nav />
 
                 <h2 className="subtitulo">Proyectos Profesionales</h2>

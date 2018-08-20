@@ -141,7 +141,7 @@ class HomeContainer extends Component {
         //this.shuffle();
         return (
             <div>
-                <Slide />
+                <Slide title="Home" />
                 <Nav />
                 <div style={{margin:"50px auto", width:"85%", display:"flex", flexWrap:"wrap" }}>
                     <Link to="about bot">

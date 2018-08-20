@@ -3,6 +3,99 @@
 //const url = 'https://suki-blog.herokuapp.com/';
 const url = 'https://suki-blogs.herokuapp.com/';
 
+//covers
+
+export const getSingleCover = (title)=>{
+    return fetch(url + 'covers/single/' + title)
+    .then(r=>{
+        if(!r.ok) {
+            console.log("chet",r);
+            return Promise.reject(r);
+        }
+        return r.json();
+    })
+    .then(item=>{
+        return item;
+    });
+};
+
+export const getCovers = ()=>{
+    return fetch(url + 'covers/')
+    .then(r=>{
+        if(!r.ok) {
+            console.log("chet",r);
+            return Promise.reject(r);
+        }
+        return r.json();
+    })
+    .then(items=>{
+        return items;
+    });
+};
+
+export const saveCover = (cover)=>{
+
+    if(cover._id){
+       return fetch(url + 'covers/' + cover._id, {
+           method: "PUT",
+           headers:{
+            "Content-Type":"application/json"
+            },
+            body:JSON.stringify(cover)
+       }) 
+       .then(r=>{
+        if(!r.ok) {
+            console.log("chet",r);
+            return Promise.reject(r);
+        }
+        return r.json();
+    })
+    .then(item=>{
+        return item;
+    });
+    } //if
+
+    return fetch(url + 'covers/', {
+        method:"post",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(cover)
+    })
+    .then(r=>{
+        if(!r.ok) {
+            console.log("chet",r);
+            return Promise.reject(r);
+        }
+        return r.json();
+    })
+    .then(item=>{
+        return item;
+    });
+};
+
+export const removeCover = (id)=>{
+    return fetch(url + 'covers/' + id, {
+        method: "DELETE",
+        headers:{
+            "Content-Type":"application/json"
+        },
+    })
+    .then(r=>{
+        if(!r.ok) {
+            console.log("chet",r);
+            return Promise.reject(r);
+        }
+        return r.json();
+    })
+    .then(item=>{
+        return item;
+    });
+};
+
+
+//covers
+
 export const getPublic = (tipo, important)=>{
     let query='';
     if(tipo) query += `&tipo=${tipo}`;

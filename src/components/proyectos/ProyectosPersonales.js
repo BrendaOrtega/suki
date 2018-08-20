@@ -33,7 +33,7 @@ class ProyectosPersonales extends Component {
         const {posts} = this.state;
         return (
             <div>
-                <Slide />
+                <Slide title="Personales" />
                 <Nav />
 
                 <h2 className="subtitulo">Proyectos Personales</h2>

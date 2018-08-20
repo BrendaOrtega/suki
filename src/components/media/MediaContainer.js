@@ -38,7 +38,7 @@ class BlogContainer extends Component {
         const {albums} = this.state;
         return (
             <div>
-                <Slide />
+                <Slide title="Fotografía" />
                 <Nav />
 
                 <h2 className="subtitulo">Fotografía</h2>

@@ -36,7 +36,7 @@ class BlogContainer extends Component {
         console.log(this.state.posts)
         return (
             <div>
-                <Slide />
+                <Slide title="Blog" />
                 <Nav />
 
                 <h2 className="subtitulo">Blog</h2>

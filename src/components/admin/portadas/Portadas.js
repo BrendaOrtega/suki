@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Btn from '../../btn/Btn';
 import { Form, Icon, Tooltip } from 'antd';
 import firebase from '../../../services/firebase';
+import {getCovers, saveCover,removeCover} from '../../../services/heroku'
 import toastr from 'toastr';
 import { Spin } from 'antd';
 import { Input, Col, Select, InputNumber, DatePicker, AutoComplete, Cascader } from 'antd';
@@ -16,24 +17,34 @@ const FormItem = Form.Item;
 class Portadas extends Component {
     input;
     preview;
-
     state = {
-        files:[],
+        file:null,
+        covers:[],
+        cover:{},
         newPortada:{name:'', pics:[]},
-
     };
 
 
     getFile = (e) => {
-        this.preview.innerHTML = '';
-        this.setState({files:e.target.files});
-        for(let pic of e.target.files){
-            const reader = new FileReader();
-            reader.readAsDataURL(pic);
-            reader.onload = (e) => {
-                this.makeImgPreview(e.target.result);
-            };
+        if(e.target.files.length < 1) return
+        const file = e.target.files[0]
+        this.setState({file})
+        const {cover} = this.state
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onload = (e)=>{
+            cover.link = e.target.result
+            this.setState({cover})
         }
+        //this.preview.innerHTML = '';
+        //this.setState({files:e.target.files});
+        // for(let pic of e.target.files){
+        //     const reader = new FileReader();
+        //     reader.readAsDataURL(pic);
+        //     reader.onload = (e) => {
+        //         this.makeImgPreview(e.target.result);
+        //     };
+        // }
 
     };
 
@@ -47,53 +58,64 @@ class Portadas extends Component {
 
     };
 
-    onChange = (a,b) => {
-        const {newPortada} = this.state;
-        newPortada.name = a;
-        this.setState({newPortada});
+    onChange = (id) => {
+        const cover = this.state.covers.find(c=>c._id === id)
+        this.setState({cover})
     };
 
     savePortada = () => {
-        const {newPortada} = this.state;
-        this.uploadFiles()
-            .then(links=>{
-                newPortada.pics = links;
-                console.log(newPortada);
-                this.setState({newPortada:clear});
+        const {cover} = this.state;
+        this.uploadFile()
+            .then(link=>{
+                cover.link = link;
+
+                return saveCover(cover)
             })
-            .then(res=>{
-                this.setState({loading:false})
-                toastr.success('se subieron las imagenes');
-                console.log(newPortada)
+            .then(c=>{
+                this.setState({cover:c, loading:false});
+                toastr.info('Se actualizó');
             })
             .catch(e=>{
                 console.log(e);
-                toastr.error("no se pudieron subir las imagenes")
+                toastr.error("no se pudo guardar")
             });
 
-
     };
-    uploadFiles = (e) => {
+    uploadFile = () => {
         this.setState({loading:true})
-        const {files} = this.state;
-        const promises = [];
-        for(let file of files){
-            promises.push(firebase.storage()
-                .ref('media')
-                .child(file.name)
+        const {file, cover} = this.state;
+        return firebase.storage()
+                .ref('covers')
+                .child(cover.title)
                 .put(file)
                 .then(snap=>{
                     return snap.downloadURL
                 })
-            );
-        }
-        return Promise.all(promises);
-
+                .catch(e=>{
+                    toastr.error('No se pudo subir tu foto, intenta mas tarde')
+                })
+    
     };
+
+    componentWillMount(){
+        this.getPortadas()
+    }
+
+    getPortadas = () => {
+        getCovers()
+        .then(covers=>{
+            console.log(covers)
+            this.setState({covers})
+        })
+        .catch(e=>{
+            console.log(e)
+            toastr.error('No se pudieron cargar las portadas')
+        })
+    }
 
 
     render() {
-        const {newPortada, loading} = this.state;
+        const {cover,newPortada, loading, covers} = this.state;
 
         return (
             <div className="box_post">
@@ -116,12 +138,15 @@ class Portadas extends Component {
                         )}>
                     <InputGroup compact style={{width:"100%"}} >
                         <Select defaultValue="Sección" onChange={this.onChange}>
-                            <Option value="home">Home</Option>
-                            <Option value="fotografia">Fotografía</Option>
-                            <Option value="blog">Blog</Option>
-                            <Option value="personales">Personales</Option>
-                            <Option value="profesionales">Profesionales</Option>
-                            <Option value="clientes">Clientes</Option>
+                            
+                            {covers.map((c, index)=>{
+                                return (
+                                    <Option key={index} value={c._id}>{c.title}</Option>
+                                )
+                            })}
+                            
+                            
+                           
                         </Select>
 
                     </InputGroup>
@@ -150,10 +175,11 @@ class Portadas extends Component {
                 </Form>
                 <div>
                     <p>Preview</p>
+                    <img width="200" src={cover.link} alt={cover.title} />
                     <div ref={div=>this.preview=div}>
                     </div>
                 </div>
-                <input accept="image/*" multiple onChange={this.getFile} ref={inp => this.input = inp} type="file" hidden/>
+                <input accept="image/*" onChange={this.getFile} ref={inp => this.input = inp} type="file" hidden/>
                 <br/>
                 <Btn
                     text="Guardar"
